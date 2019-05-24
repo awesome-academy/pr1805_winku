@@ -1,0 +1,52 @@
+vi:
+  button:
+    post: Đăng Bài
+    english: Tiếng Anh
+    vietnăm: Tiếng Việt
+  text:
+    published: Đã chia sẻ
+    write_something: Bạn cảm thấy thế nào?
+    success: Thành công
+    fails: Lỗi
+    language: Ngôn ngữ
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one:     một giờ trước
+        other:     "%{count} giờ trước"
+      about_x_months:
+        one:     khoảng một tháng trước
+        other:     khoảng %{count} tháng trước
+      about_x_years:
+        one:     khoảng một năm trước
+        other:     khoảng %{count} năm trước
+      almost_x_years:
+        one:     gần một năm trước
+        other:     gần %{count} năm trước
+      half_a_minute:     nửa phút trước
+      less_than_x_minutes:
+        zero:     vừa xong
+        one:     hơn một phút trước
+        other:     hơn %{count} phút trước
+      less_than_x_seconds:
+        zero:     vừa xong
+        one:     kem một giây trước
+        other:     kem %{count} giây trước
+      over_x_years:
+        one:     hơn một năm trước
+        other:     hơn %{count} năm trước
+      x_days:
+        one:     1 ngày trước
+        other:     "%{count} ngày trước"
+      x_minutes:
+        one:     1 phút trước
+        other:     "%{count} phút trước"
+      x_months:
+        one:     1 tháng trước
+        other:     "%{count} tháng trước"
+      x_years:
+        one:     1 năm trước
+        other:     "%{count} năm trước"
+      x_seconds:
+        one:     1 giây trước
+        other:    "%{count} giây trước"

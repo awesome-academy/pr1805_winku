@@ -1,4 +1,7 @@
 class StaticPagesController < ApplicationController
 
-  def index; end
+  def index
+    @post = Post.new
+    @posts = Post.newest
+  end
 end
