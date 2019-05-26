@@ -1,14 +1,19 @@
 vi:
+  title:
+    edit_post: Sửa bài viết
   button:
     post: Đăng Bài
     english: Tiếng Anh
-    vietnăm: Tiếng Việt
+    vietnam: Tiếng Việt
+    edit_post: Sửa bài viết
+    delete: Xóa
   text:
     published: Đã chia sẻ
     write_something: Bạn cảm thấy thế nào?
     success: Thành công
     fails: Lỗi
     language: Ngôn ngữ
+    confirm: Bạn có chắc chắn muốn xóa?
   datetime:
     distance_in_words:
       about_x_hours:

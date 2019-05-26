@@ -1,14 +1,19 @@
 en:
+  title:
+    edit_post: Edit post
   button:
     post: Post
     english: English
     vietnam: Vietnamese
+    edit_post: Edit post
+    delete: Delete
   text:
     published: Published
     write_something: Write Something
     success: Success
     fails: Fails
     language: Language
+    confirm: Are you want to delete, sure?
   datetime:
     distance_in_words:
       about_x_hours:

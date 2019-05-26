@@ -17,6 +17,7 @@ gem "mini_magick", "~> 4.8"
 gem "bootsnap", ">= 1.1.0"
 gem "font-awesome-rails" , "~> 4.7.0"
 gem "bootstrap", "~> 4.1.3"
+gem 'jquery-rails'
 gem "themify-icons-rails" , github: "scratch-soft/themify-icons-rails"
 
 group :development, :test do
