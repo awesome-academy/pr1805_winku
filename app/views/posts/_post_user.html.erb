@@ -1,12 +1,25 @@
-<div class="central-meta item" style="display: inline-block;">
+ <div class="central-meta">
   <div class="user-post">
     <div class="friend-info">
       <figure>
         <%= image_tag "friend-avatar10.jpg" %>
       </figure>
-      <div class="friend-name">
-        <ins><%= link_to post.user.name, "#" %></ins>
-        <span><%= t("text.published") %>: <%= time_ago_in_words(post.created_at) %></span>
+      <div class="top-area">
+        <ul class="main-menu">
+          <div class="friend-name">
+            <ins><%= link_to post.user.name, "#" %></ins>
+            <span><%= t("text.published") %>: <%= time_ago_in_words(post.created_at) %></span>
+          </div>
+        </ul>
+        <ul class="main-menu" >
+          <li>
+            <a href="#" title="Setting" data-toggle="dropdown"></a>
+            <ul>
+              <li><%= link_to t("button.edit_post"), edit_post_path(post), remote: true %></li>
+              <li><%= link_to t("button.delete"), post, method: :delete, data: {confirm: t("text.confirm")} %></li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <div class="post-meta">
         <%= image_tag "user-post.jpg" %>

@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     root "static_pages#index"
     get "/signin", to: "sessions#new"
     get "/timeline", to: "users#index"
-    resources :posts, only: :create
+    resources :posts, only: [:create, :update, :edit, :destroy]
   end
 end

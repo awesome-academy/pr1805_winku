@@ -1,25 +1,23 @@
-<div class="central-meta">
-  <div class="new-postbox">
-    <figure>
-      <%= image_tag "admin2.jpg" %>
-    </figure>
-    <div class="newpst-input">
-      <%= form_with model: post, local: true do |f| %>
-        <%= f.text_area :content, rows: "3", placeholder: t("text.write_something") %>
-        <div class="attachments">
-          <ul>
-            <li>
-              <i class="fa fa-image"></i>
-              <label class="fileContainer">
-                <input type="file">
-              </label>
-            </li>
-            <li>
-              <%= f.submit t("button.post"), class: "btn btn-primary" %>
-            </li>
-          </ul>
-        </div>
-      <% end %>
-    </div>
+<div class="new-postbox">
+  <figure>
+    <%= image_tag "admin2.jpg" %>
+  </figure>
+  <div class="newpst-input">
+    <%= form_with model: post, local: true do |f| %>
+      <%= f.text_area :content, rows: "3", placeholder: t("text.write_something") %>
+      <div class="attachments">
+        <ul>
+          <li>
+            <i class="fa fa-image"></i>
+            <label class="fileContainer">
+              <input type="file">
+            </label>
+          </li>
+          <li>
+            <%= f.submit t("button.post"), class: "btn btn-primary" %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
   </div>
 </div>
