@@ -22,7 +22,12 @@
         </ul>
       </div>
       <div class="post-meta">
-        <%= image_tag "user-post.jpg" %>
+        <div class="description">
+          <p>
+           <%= post.content %>
+          </p>
+        </div>
+        <%= image_tag post.image.image_link.to_s %>
         <div class="we-video-info">
           <ul>
             <li>
@@ -50,11 +55,6 @@
               </span>
             </li>
           </ul>
-        </div>
-        <div class="description">
-          <p>
-           <%= post.content %>
-          </p>
         </div>
       </div>
     </div>

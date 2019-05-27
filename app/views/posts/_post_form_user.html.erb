@@ -10,7 +10,12 @@
           <li>
             <i class="fa fa-image"></i>
             <label class="fileContainer">
-              <input type="file">
+              <%= f.fields_for :image_attributes do |image_f| %>
+                <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
+                <%= image_f.hidden_field :imageable_id, value: post.id %>
+                <%= image_f.hidden_field :imageable_type, value: "image" %>
+                <%= image_f.hidden_field :image_cache %>
+              <% end %>
             </label>
           </li>
           <li>
