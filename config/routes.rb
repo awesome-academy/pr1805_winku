@@ -6,4 +6,9 @@ Rails.application.routes.draw do
     get "/timeline", to: "users#index"
     resources :posts, only: [:create, :update, :edit, :destroy]
   end
+  scope "(:locale)", locale: /en|vi/ do
+    devise_for :users
+    root "static_pages#index"
+    resources :users
+  end
 end

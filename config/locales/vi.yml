@@ -55,3 +55,61 @@ vi:
       x_seconds:
         one:     1 giây trước
         other:    "%{count} giây trước"
+  SHORTCUTS: Phím Tắt
+  News_Feed: Bảng Tin
+  Inbox: Tin Nhắn
+  My_Pages: Trang Cá Nhân
+  Friends: Bạn Bè
+  Notifications: Thông Báo
+  Who_is_following: Có thể bạn quen ?
+  Your_Page: Trang
+  My_Page: Trang Cá Nhân
+  Messages: Tin Nhắn
+  Notifications: Thông Báo
+  Likes: Lượt Thích
+  Views: Lượt Xem
+  CREATE_YOUR_OWN_FAVOURIT_PAGE: Tạo Page Của Bạn
+  Start_Now!: Bắt Đầu Nhé !
+  Friends: Bạn Bè
+  We_took_this_simple_idea_and_built_it_into_the_world_is_leading_travel_review_platform: Chúng tôi đã lấy ý tưởng đơn giản này và xây dựng nó thành nền tảng đánh giá du lịch hàng đầu thế giới
+  Follow: Theo Dõi
+  Navigate: Điều Hướng
+  Userful_link: Hướng Dẫn
+  DOWNLOAD_APPS: Tải Ứng Dụng
+  Home: Trang Chủ
+  Timeline: Dòng Thời Gian
+  Account_Settings: Chỉnh Sửa Tài Khoản
+  More_Pages: Trang
+  Resend_confirmation_instructions: Gửi lại hướng dẫn xác nhận
+  Sign_up: Đăng Kí
+  Login: Đăng Nhập
+  Life_is_short_and_the_world_is_wide:  Cuộc Sống Thì Quá Ngắn Còn Thế Giới Thì Rộng Lớn
+  Let_is_explore_the_world_together: Hãy Khám Phá Thế Giới Cùng Nhau
+  Don’t_use_Winku_Yet?: Bạn chưa sử dụng Winku ?
+  Take_the_tour: Tạo Tour
+  Join_now: Tham Gia Ngay
+  Always_Remember_Me: Giữ Tôi Luôn Đăng Nhập
+  Accept_Terms_&_Conditions_?: Đồng Ý Chính Sách & Điều Khoản ?
+  Register: Đăng Ký
+  Already_have_an_account: Đã Có Tài Khoản
+  Forgot_your_password?: Quên Mật Khẩu?
+  password: Mật Khẩu
+  Send_me_reset_password_instructions: Gửi cho tôi hướng dẫn đặt lại mật khẩu
+  Change_your_password: Thay đổi mật khẩu
+  Edit_Password: Đổi Mật Khẩu
+  Update: Cập Nhật
+  Cancel_my_account: Khóa Tài Khoản
+  Unhappy?: Bạn Đang Không Vui?
+  Back: Trở Lại
+  Log_Out: Đăng Xuất
+  view_profile: Xem Trang Cá Nhân
+  edit_profile: Sửa Thông Tin
+  SOCIALS: Mạng Xã Hội
+  Add_Friend:  Kết Bạn
+  Change_Avatar: Đổi Ảnh Đại Diện
+  groups: Nhóm
+  more: Thêm
+  about: Thông Tin
+  Photos: Ảnh
+  name: Tên
+  update: Cập Nhật

@@ -245,7 +245,7 @@ section {
 }
 
 .pattern:before {
-    background: #088dcd url("../images/dot-pattern.png") repeat scroll 0 0;
+    background: #088dcd  repeat scroll 0 0;
     opacity: 0.45;
 }
 
@@ -604,6 +604,7 @@ header.sticky {
     display: inline-block;
     margin-top: 20px;
     width: 100%;
+    background-color: #fff
 }
 
 .form-radio > .radio {
@@ -2548,7 +2549,6 @@ footer .logo {
 }
 
 .theme-layout::before {
-    background: url(../images/dot-pattern.png);
     background-repeat: repeat;
     content: "";
     height: 100%;
