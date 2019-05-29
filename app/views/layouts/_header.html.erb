@@ -110,8 +110,7 @@
       </li>
       <% if user_signed_in? %>
         <li>
-            <%= image_tag current_user.avatar.url || "default_avatar.png" %>
-            <%= current_user.name %>
+          <%= image_tag current_user.avatar.url || "default_avatar.png" %>
           <ul>
             <li><%=link_to user_path(current_user) do %>
             <i class="ti-user"></i>
@@ -135,15 +134,17 @@
               <% end %>
             </li>
           </ul>
-          <a href="messages.html" title="" class="more-mesg">view more</a>
+          <%= current_user.name %>
         </div>
       </li>
       <% else %>
+      <li class="hash-children">
         <%= link_to new_user_session_path do %>
-        <i class="ti-crown"></i>
-        <%= I18n.t ".Login" %>
+          <i class="ti-crown"></i>
+          <%= I18n.t ".Login" %>
         <% end %>
       <% end %>
+    </li>
     </ul>
   </div>
 </div>
