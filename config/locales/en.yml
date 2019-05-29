@@ -56,3 +56,107 @@ en:
         one:     1 second ago
         other:     "%{count} seconds ago"
 
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t hello
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t(hello) %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   true: foo
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: Hello world
+  SHORTCUTS: SHORTCUTS
+  News_Feed: News Feed
+  Inbox: Inbox
+  My_Pages: My Pages
+  Friends: Friend
+  Notifications: Notifications
+  Who_is_following: Who's follownig
+  Your_Page: Your Page
+  My_Page: My Page
+  Messages: Messages
+  Notifications: Notifications
+  Likes: Likes
+  Views: Views
+  CREATE_YOUR_OWN_FAVOURIT_PAGE: CREATE YOUR OWN FAVOURIT PAGE
+  Start_Now!: Start Now!
+  Friends: Friend
+  We_took_this_simple_idea_and_built_it_into_the_world_is_leading_travel_review_platform: We took this simple idea and built it into the world’s leading travel review platform.
+  Follow: Follow
+  Navigate: Navigate
+  Userful_link: Userful Link
+  DOWNLOAD_APPS: DOWNLOAD APPS
+  Home: Home
+  Timeline: Timeline
+  Account_Settings: Account Settings
+  More_Pages: More Pages
+  Resend_confirmation_instructions: Resend confirmation instructions
+  Sign_up: Sign Up
+  Life_is_short_and_the_world_is_wide:  Life is short and the world is wide
+  Let_is_explore_the_world_together: Let is explore the world together
+  Login: Login
+  Don’t_use_Winku_Yet?: Don’t Use Winku Yet?
+  Take_the_tour: Take The Tour
+  Join_now: Join Now
+  Always_Remember_Me: Always Remember Me
+  Accept_Terms_&_Conditions_?: Accept Terms & Conditions ?
+  Register: Register
+  Already_have_an_account: Already have an account
+  Forgot_your_password?: Forgot your password?
+  password: password
+  Send_me_reset_password_instructions: Send me reset password instructions
+  Change_your_password: Change your password
+  Edit_Password: Edit Password
+  Update: Update
+  Cancel_my_account: Cancel My Account
+  Unhappy?: Unhappy?
+  Back: Back
+  Home_Social: Home
+  Home_Social_2: Home 2
+  Home_Company: Home Company
+  Timeline: Timeline
+  Likes_page: Like Page
+  create_fav_page: Create fav page
+  Edit_account_setting: Edit Account Settings
+  edit_profile_basics: Edit Profile Basic
+  Inbox: Inbox
+  notifications_page: Notifications Page
+  404_error_page: 404 Pages
+  about: About
+  contact: Contact
+  view_profile: View Profile
+  edit_profile: Edit Profile
+  account_setting: Account Settings
+  Log_Out: Log Out
+  SOCIALS: SOCIALS
+  Add_Friend: Add Friend
+  Change_Avatar: Change Avatar
+  Groups: Groups
+  more: more
+  Photos: Photos
+  name: name
+  update: Update

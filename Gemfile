@@ -19,6 +19,11 @@ gem "font-awesome-rails" , "~> 4.7.0"
 gem "bootstrap", "~> 4.1.3"
 gem 'jquery-rails'
 gem "themify-icons-rails" , github: "scratch-soft/themify-icons-rails"
+gem "devise"
+gem "jquery-rails"
+gem "figaro"
+gem "letter_opener", :group => :development
+gem "carrierwave"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

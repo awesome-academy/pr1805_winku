@@ -1,6 +1,6 @@
 <div class="new-postbox">
   <figure>
-    <%= image_tag "admin2.jpg" %>
+    <%= image_tag current_user.avatar.url || "default_avatar.png" %>
   </figure>
   <div class="newpst-input">
     <%= form_with model: post, local: true do |f| %>
