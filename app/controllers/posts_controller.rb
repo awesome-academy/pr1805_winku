@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   def update
     @post.update post_params
     respond_to do |format|
-      format.html { redirect_back}
+      format.html { render :edit}
       format.js
     end
   end
@@ -39,7 +39,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :title, :content, :category_id, :place_id
+    params.require(:post).permit :title, :content, :category_id, :place_id, image_attributes: [:id,
+      :image_link, :imageable_id, :imageable_type, :_destroy]
   end
 
   def load_post
