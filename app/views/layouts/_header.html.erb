@@ -110,7 +110,7 @@
       </li>
       <% if user_signed_in? %>
         <li>
-          <%= image_tag current_user.avatar.url || "default_avatar.png" %>
+          <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>
           <ul>
             <li><%=link_to user_path(current_user) do %>
             <i class="ti-user"></i>

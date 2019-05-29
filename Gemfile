@@ -27,6 +27,9 @@ gem "jquery-rails"
 gem "figaro"
 gem "letter_opener", :group => :development
 gem "carrierwave"
+gem "omniauth"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

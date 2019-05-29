@@ -1,6 +1,6 @@
 <div class="new-postbox">
   <figure>
-    <%= image_tag current_user.avatar.url || "default_avatar.png" %>
+    <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>
   </figure>
   <div class="newpst-input">
     <%= form_with model: post, local: true do |f| %>
