@@ -1,0 +1,2 @@
+$(".<%= @commentable.class.name.downcase %>#<%= @commentable.id %>").html("");
+$("#comments-<%= @commentable.id %>").html("<%= j render "comments/comment_list", commentable: @commentable %>");

@@ -27,6 +27,9 @@
            <%= status.content %>
           </p>
         </div>
+        <div id="comments-<%= status.id %>">
+          <%= render "comments/comment_list", commentable: status %>
+        </div>
         <%= image_tag status.image.image_link.to_s if status.image.present? %>
         <div class="we-video-info">
           <ul>
@@ -37,10 +40,10 @@
               </span>
             </li>
             <li>
-              <span class="comment" data-toggle="tooltip" title="" data-original-title="Comments">
+              <%= link_to new_comment_path(commentable_id:
+                status.id, commentable_type: "status"), class: "btn btn-primary btn-comment", data:{ toggle: "collapse" }, remote: true, style: "color:#FFFFFF;" do %>
                 <i class="fa fa-comments-o"></i>
-                <ins></ins>
-              </span>
+              <% end %>
             </li>
             <li>
               <span class="like" data-toggle="tooltip" title="" data-original-title="like">
@@ -58,5 +61,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="<%= status.id %>" class="status">
+    <%= render "comments/comment_form", commentable: status %>
   </div>
 </div>
