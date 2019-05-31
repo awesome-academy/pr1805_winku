@@ -20,7 +20,8 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit :name, :email, :avatar
+    params.require(:user).permit :name, :email,
+    image_attributes: [:id, :image_link, :imageable_id, :imageable_type, :_destroy]
   end
 
   def correct_user

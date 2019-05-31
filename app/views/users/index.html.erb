@@ -81,7 +81,7 @@
                   <div class="central-meta item">
                     <div class="new-postbox">
                       <figure>
-                        <%= image_tag "admin2" ,alt:"" %>
+                        <%= image_tag @user.image.image_link.to_s if @user.image.present? %>
                       </figure>
                       <div class="newpst-input">
                         <form method="post">

@@ -8,10 +8,15 @@
           <%= f.label :name, class: "control-label", for: "input" %><i class="mtrl-select"></i>
         </div>
         <div class="form-group">
-          <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png" %>
+          <%= f.fields_for :image_attributes do |image_f| %>
+            <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
+            <%= image_f.hidden_field :imageable_id, value: current_user.id %>
+            <%= image_f.hidden_field :imageable_type, value: "user" %>
+            <%= image_f.hidden_field :image_cache %>
+          <% end %>
         </div>
         <div class="form-group">
-          <%= image_tag @user.avatar.url if @user.avatar? %>
+          <%= image_tag @user.image.image_link.to_s if @user.image.present? %>
         </div>
         <div class="submit-btns">
           <%= f.submit I18n.t(".Update"), class: "btn btn-primary"  %>

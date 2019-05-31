@@ -60,4 +60,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.action_mailer.default_url_options = { :host =>'localhost:3000' }
   config.action_mailer.delivery_method = :letter_opener
+  GOOGLE_CLIENT_ID =  ENV["GOOGLE_CLIENT_ID"]
+  GOOGLE_CLIENT_SECRET =  ENV["GOOGLE_CLIENT_SECRET"]
+  FACEBOOK_APP_ID = ENV["FACEBOOK_APP_ID"]
+  FACEBOOK_APP_SECRET = ENV["FACEBOOK_APP_SECRET"]
 end

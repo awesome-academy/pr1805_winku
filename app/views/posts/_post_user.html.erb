@@ -2,7 +2,7 @@
   <div class="user-post">
     <div class="friend-info">
       <figure>
-        <%= image_tag "friend-avatar10.jpg" %>
+        <%= image_tag post.user.image.image_link.to_s if post.user.image.present? %>
       </figure>
       <div class="top-area">
         <ul class="main-menu">
@@ -27,7 +27,7 @@
            <%= post.content %>
           </p>
         </div>
-        <%= image_tag post.image.image_link.to_s %>
+        <%= image_tag post.image.image_link.to_s if post.image.present? %>
         <div class="we-video-info">
           <ul>
             <li>

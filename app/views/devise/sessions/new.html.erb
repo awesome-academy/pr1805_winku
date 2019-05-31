@@ -53,6 +53,15 @@
                 <button class="btn btn-primary signup" type="button">
                   <span><%= I18n.t ".Register" %></span></button>
               </div>
+              <%= link_to user_facebook_omniauth_authorize_url do %>
+                <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                Facebook
+              <% end %>
+              <br>
+              <%= link_to user_google_oauth2_omniauth_authorize_url do %>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                Google
+              <% end %>
             <% end %>
           </div>
           <div class="log-reg-area reg">

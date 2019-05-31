@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_121039) do
+ActiveRecord::Schema.define(version: 2019_05_29_132902) do
 
   create_table "businesses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address"
@@ -149,6 +149,12 @@ ActiveRecord::Schema.define(version: 2019_05_27_121039) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "provider"
+    t.string "uid"
+    t.string "token"
+    t.integer "expires_at"
+    t.boolean "expires"
+    t.string "refresh_token"
     t.index ["business_id"], name: "index_users_on_business_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
