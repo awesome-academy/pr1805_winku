@@ -1,9 +1,9 @@
-class PostsController < ApplicationController
-  before_action :load_post, only: [:edit, :update, :destroy]
+class StatusesController < ApplicationController
+  before_action :load_status, only: [:edit, :update, :destroy]
 
   def create
-    @post = User.first.posts.build post_params
-    if @post.save
+    @status = current_user.statuses.build status_params
+    if @status.save
       flash[:danger] = t("text.success")
       respond_to do |format|
         format.html { redirect_back(fallback_location: root_path)}
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update post_params
+    @status.update status_params
     respond_to do |format|
       format.html { render :edit}
       format.js
@@ -31,19 +31,19 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    @status.destroy
     flash[:danger] = t("text.success")
     redirect_back(fallback_location: root_path)
   end
 
   private
 
-  def post_params
-    params.require(:post).permit :title, :content, :category_id, :place_id, image_attributes: [:id,
+  def status_params
+    params.require(:status).permit :content, image_attributes: [:id,
       :image_link, :imageable_id, :imageable_type, :_destroy]
   end
 
-  def load_post
-    @post = Post.find_by id: params[:id]
+  def load_status
+    @status = Status.find_by id: params[:id]
   end
 end

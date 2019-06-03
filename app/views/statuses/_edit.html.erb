@@ -7,11 +7,11 @@
     <div class="central-meta">
       <div class="new-postbox">
         <figure>
-          <%= image_tag @user.image.image_link.to_s if @user.image.present? %>
+          <%= image_tag status.user.image.image_link.to_s if status.user.image.present? %>
         </figure>
         <div class="newpst-input">
-          <%= form_with model: post do |f| %>
-            <%= f.text_area :content, rows: "3", placeholder:  post.content %>
+          <%= form_with model: status, url: status_path do |f| %>
+            <%= f.text_area :content, rows: "5", placeholder:  status.content %>
             <div class="attachments">
               <ul>
                 <li>
@@ -19,7 +19,7 @@
                   <label class="fileContainer">
                     <%= f.fields_for :image_attributes do |image_f| %>
                       <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
-                      <%= image_f.hidden_field :imageable_id, value: post.id %>
+                      <%= image_f.hidden_field :imageable_id, value: status.id %>
                       <%= image_f.hidden_field :imageable_type, value: "image" %>
                       <%= image_f.hidden_field :image_cache %>
                     <% end %>

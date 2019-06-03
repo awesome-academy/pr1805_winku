@@ -1,5 +1,3 @@
-class Place < ApplicationRecord
-  has_many :posts
-
+class Tour < Post
   scope :newest, -> { order created_at: :desc }
 end

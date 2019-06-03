@@ -1,0 +1,26 @@
+<div class="central-meta" style="margin: 20px; height: 500px;">
+  <div class="user-post">
+    <div class="post-meta">
+      <div class="user-post">
+        <%= image_tag tour.image.image_link.to_s if tour.image %>
+        <div class="description">
+          <h3 style="height: 70px; overflow: hidden;"><%= link_to tour.title, "#" %></h3>
+          <div class="row">
+            <div class="col-lg-7">
+              <h6><%= t("cost") %></h6>
+              <h6><%= t("time") %></h6>
+              <h6><%= t("place") %></h6>
+              <h6><%= t("vehicle") %></h6>
+            </div>
+            <div class="col-lg-5">
+              <h6>:<%= tour.cost %></h6>
+              <h6>:<%= tour.time %></h6>
+              <h6>:<%= tour.place.name if tour.place %></h6>
+              <h6>:<%= tour.vehicle %></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

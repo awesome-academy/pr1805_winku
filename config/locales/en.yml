@@ -7,7 +7,9 @@ en:
     vietnam: Vietnamese
     edit_post: Edit post
     delete: Delete
+    create_tour: Create Tour
   text:
+    tour: Tours
     published: Published
     write_something: Write Something
     success: Success

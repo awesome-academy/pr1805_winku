@@ -7,7 +7,9 @@ vi:
     vietnam: Tiếng Việt
     edit_post: Sửa bài viết
     delete: Xóa
+    create_tour: Tạo tua du lịch
   text:
+    tour: Tour du lịch
     published: Đã chia sẻ
     write_something: Bạn cảm thấy thế nào?
     success: Thành công

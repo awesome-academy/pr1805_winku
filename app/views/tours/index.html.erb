@@ -8,18 +8,20 @@
               <div class="col-lg-3">
                 <%= render "sidebars/sidebar-1" %>
               </div>
-              <div class="col-lg-6">
-                <div class="central-meta">
-                  <%= render "statuses/status_form", status: @status %>
-                </div>
-                <div id="post">
-                  <%= render "statuses/statuses", statuses: @statuses %>
-                </div>
+              <div class="col-lg-9">
                 <div class="loadMore">
+                  <div id="post">
+                     <div class="central-meta">
+                      <div class="user-post">
+                        <% @tours.each do |tour| %>
+                          <div class="row col-lg-6" style="float: left;">
+                            <%= render "tours/tour", tour: tour %>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="col-lg-3">
-                 <%= render "sidebars/sidebar-2" %>
               </div>
             </div>
           </div>

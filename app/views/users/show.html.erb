@@ -52,9 +52,7 @@
                 <a class="" href="about.html" title="" data-ripple="">
                   <%= I18n.t ".about" %>
                 </a>
-                <a class="" href="#" title="" data-ripple="">
-                  <%= I18n.t ".more" %>
-                </a>
+                <%= link_to t("button.create_tour"), new_tour_path %>
               </li>
             </ul>
           </div>
@@ -87,149 +85,17 @@
                     </div>
                 </aside>
                 <%= render "sidebars/sidebar-1" %>
-              </div><!-- sidebar -->
+              </div>
               <div class="col-lg-6">
-                 <div class="central-meta">
-                   <%= render "posts/post_form_user", post: @post %>
-                 </div>
-                 <div id="post">
-                   <%= render "posts/index", posts: @posts %>
-                 </div>
                 <div class="loadMore">
-                  <div class="central-meta item">
-                    <div class="new-postbox">
-                      <figure>
-                        <%= image_tag @user.image.image_link.to_s if @user.image.present? %>
-                      </figure>
-                      <div class="newpst-input">
-                        <form method="post">
-                          <textarea rows="2" placeholder="write something"></textarea>
-                          <div class="attachments">
-                            <ul>
-                              <li>
-                                <i class="fa fa-music"></i>
-                                <label class="fileContainer">
-                                  <input type="file">
-                                </label>
-                              </li>
-                              <li>
-                                <i class="fa fa-image"></i>
-                                <label class="fileContainer">
-                                  <input type="file">
-                                </label>
-                              </li>
-                              <li>
-                                <i class="fa fa-video-camera"></i>
-                                <label class="fileContainer">
-                                  <input type="file">
-                                </label>
-                              </li>
-                              <li>
-                                <i class="fa fa-camera"></i>
-                                <label class="fileContainer">
-                                  <input type="file">
-                                </label>
-                              </li>
-                              <li>
-                                <button type="submit">Publish</button>
-                              </li>
-                            </ul>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div><!-- add post new box -->
-                  <div class="central-meta item">
-                    <div class="user-post">
-                      <div class="friend-info">
-                        <figure>
-                          <%= image_tag "friend-avatar10" ,alt: "" %>
-                        </figure>
-                        <div class="friend-name">
-                          <ins><a href="time-line.html" title="">Janice Griffith</a></ins>
-                          <span>published: june,2 2018 19:PM</span>
-                        </div>
-                        <div class="description">
-                            <p>
-                              World's most beautiful car in Curabitur <a href="#" title="">#test drive booking !</a> the most beatuiful car available in america
-                            </p>
-                          </div>
-                        <div class="post-meta">
-                          <div class="linked-image align-left">
-                            <a href="#" title=""><%= image_tag "page1" ,alt: ""%></a>
-                          </div>
-                          <div class="detail">
-                            <span>Love Maid - ChillGroves</span>
-                            <p>Lorem ipsum dolor sit amet... </p>
-                            <a href="#" title="">www.sample.com</a>
-                          </div>
-                          <div class="we-video-info">
-                            <ul>
-
-                              <li>
-                                <span class="views" data-toggle="tooltip" title="views">
-                                  <i class="fa fa-eye"></i>
-                                  <ins>1.2k</ins>
-                                </span>
-                              </li>
-                              <li>
-                                <span class="comment" data-toggle="tooltip" title="Comments">
-                                  <i class="fa fa-comments-o"></i>
-                                  <ins>52</ins>
-                                </span>
-                              </li>
-                              <li>
-                                <span class="like" data-toggle="tooltip" title="like">
-                                  <i class="ti-heart"></i>
-                                  <ins>2.2k</ins>
-                                </span>
-                              </li>
-                              <li>
-                                <span class="dislike" data-toggle="tooltip" title="dislike">
-                                  <i class="ti-heart-broken"></i>
-                                  <ins>200</ins>
-                                </span>
-                              </li>
-                              <li class="social-media">
-                                <div class="menu">
-                                  <div class="btn trigger"><i class="fa fa-share-alt"></i></div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-html5"></i></a></div>
-                                  </div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-facebook"></i></a></div>
-                                  </div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-google-plus"></i></a></div>
-                                  </div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-twitter"></i></a></div>
-                                  </div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-css3"></i></a></div>
-                                  </div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-instagram"></i></a>
-                                  </div>
-                                  </div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-dribbble"></i></a>
-                                  </div>
-                                  </div>
-                                  <div class="rotater">
-                                  <div class="btn btn-icon"><a href="#" title=""><i class="fa fa-pinterest"></i></a>
-                                  </div>
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="central-meta">
+                    <%= render "statuses/status_form", status: @status %>
+                  </div>
+                  <div id="post">
+                    <%= render "statuses/statuses", statuses: @statuses %>
                   </div>
                 </div>
-              </div><!-- centerl meta -->
+              </div>
             </div>
           </div>
         </div>
