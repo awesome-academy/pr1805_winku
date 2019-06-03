@@ -3,7 +3,8 @@
     <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>
   </figure>
   <div class="newpst-input">
-    <%= form_with model: post, local: true do |f| %>
+    <%= form_with model: status, url: statuses_path, local: true do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.text_area :content, rows: "3", placeholder: t("text.write_something") %>
       <div class="attachments">
         <ul>
@@ -12,7 +13,7 @@
             <label class="fileContainer">
               <%= f.fields_for :image_attributes do |image_f| %>
                 <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
-                <%= image_f.hidden_field :imageable_id, value: post.id %>
+                <%= image_f.hidden_field :imageable_id, value: status.id %>
                 <%= image_f.hidden_field :imageable_type, value: "image" %>
                 <%= image_f.hidden_field :image_cache %>
               <% end %>

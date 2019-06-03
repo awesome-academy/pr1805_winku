@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-  before_action :correct_user , only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def show
     @user = User.find_by id: params[:id]
-    @post = Post.new
-    @posts = current_user.posts.newest
+    @status = Status.new
+    @statuses = current_user.statuses.newest
   end
 
   def edit; end
