@@ -1,0 +1,27 @@
+<% commentable.comments.each do |comment| %>
+<div class="coment-area">
+  <ul class="we-comet">
+    <li>
+      <div class="comet-avatar">
+        <%= image_tag comment.user.image.image_link.to_s if comment.user.image.present? %>
+      </div>
+      <div class="we-comment">
+        <div class="coment-head">
+          <h5><%= link_to "#{comment.user.name}", user_path(comment.user.id) %></h5>
+          <span></span>
+        </div>
+        <p>
+          <%= comment.content %>
+        </p>
+        <% if current_user? comment.user %>
+          <small>
+            <%= link_to I18n.t(".edit"), edit_comment_path(comment), data: { toggle:"collapse", target: "#collapse#{comment.id}"} %>
+          </small>&nbsp;&nbsp;
+          <small><%= link_to I18n.t(".delete"), comment_path(comment), method: :delete, data: { confirm: "Are you sure?"}, remote: true %></small>
+        <% end %>
+      </div>
+      <%= render "comments/edit_form", comment: comment, commentable: commentable  %>
+    </li>
+  </ul>
+</div>
+<% end %>
