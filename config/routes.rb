@@ -15,4 +15,9 @@ Rails.application.routes.draw do
     resources :users
     resources :comments, except: :index
   end
+  scope "(:locale)", locale: /en|vi/ do
+    namespace :admin do
+      root "homes#index"
+    end
+  end
 end
