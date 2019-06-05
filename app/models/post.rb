@@ -6,4 +6,5 @@ class Post < ApplicationRecord
     attributes['image_link'].blank?}
 
   scope :newest, -> { order created_at: :desc }
+  has_many :comments, as: :commentable, dependent: :destroy
 end

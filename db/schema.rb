@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_130724) do
+ActiveRecord::Schema.define(version: 2019_06_06_062512) do
 
   create_table "businesses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address"
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 2019_06_02_130724) do
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id"
-    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.string "commentable_type"
+    t.integer "commentable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(version: 2019_06_02_130724) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "conversations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image_link"
     t.datetime "created_at", null: false
@@ -71,12 +80,13 @@ ActiveRecord::Schema.define(version: 2019_06_02_130724) do
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content"
-    t.integer "sender_id"
-    t.bigint "chatroom_id"
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -163,5 +173,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_130724) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "users", "businesses"
 end

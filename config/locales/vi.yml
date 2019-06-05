@@ -8,6 +8,7 @@ vi:
     edit_post: Sửa bài viết
     delete: Xóa
     create_tour: Tạo tua du lịch
+    edit_tour: Cập nhật tour du lịch
   text:
     tour: Tour du lịch
     published: Đã chia sẻ
@@ -115,3 +116,6 @@ vi:
   Photos: Ảnh
   name: Tên
   update: Cập Nhật
+  edit: Chỉnh Sửa
+  Comment: Bình Luận
+  delete: Xoá

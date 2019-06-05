@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_one :image, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :image, reject_if: proc {|attributes|
     attributes['image_link'].blank?}
+  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :conversations, :foreign_key => :sender_id
+
+  enum role: {admin: 1, user: 2, business: 3}, _prefix: :role
 
   def self.new_with_session params, session
     super.tap do |user|

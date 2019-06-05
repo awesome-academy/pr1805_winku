@@ -1,1 +1,82 @@
+.modal-backdrop.show {
+  display: none;
+}
+.social-facebook{
+  background:#007bff;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 3px;
+  margin-top: 20px;
+  display: block;
+}
+.social-google{
+  background:#902e0d;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-top: 20px;
+  display: block;
+}
+.social-facebook:hover, .social-google:hover{
+  color: #fff;
+}
+.form-group textarea{
+  border: 1px solid #ede9e9;
+  box-shadow: none;
+}
+.coment-area {
+  display: inline-block;
+  margin-top: 10px;
+  width: 100%;
+}
+.we-comet {
+    float: left;
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
+}
 
+.we-comment {
+    border: 1px solid #ede9e9;
+    display: table-cell;
+    margin-left: 20px;
+    padding: 10px;
+    vertical-align: top;
+    position: relative;
+    width: 65%;
+}
+.comet-avatar {
+    display: table-cell;
+    max-width: 4.6%;
+    vertical-align: top;
+    width: 4.6%;
+}
+.coment-head {
+    display: inline-block;
+    width: 100%;
+}
+.coment-head > h5 {
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-bottom: 0;
+    color: #2a2a2a;
+}
+.coment-head > span {
+    color: #999;
+    font-size: 12px;
+    padding-left: 10px;
+    display: inline-block;
+}
+.we-comment > p {
+  font-size: 14px;
+  line-height: 26px;
+  margin-bottom: 0;
+  max-width: 100%;
+  margin-top: 5px;
+}
+.w-70{
+  width:70%;
+}

@@ -1,6 +1,6 @@
 <div class="new-postbox">
   <figure>
-    <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>
+    <%= image_tag user.image.image_link.to_s if user.image.present? %>
   </figure>
   <div class="newpst-input">
     <%= form_with model: status, url: statuses_path, local: true do |f| %>

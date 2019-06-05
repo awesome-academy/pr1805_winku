@@ -8,6 +8,7 @@ en:
     edit_post: Edit post
     delete: Delete
     create_tour: Create Tour
+    edit_tour: Edit tour
   text:
     tour: Tours
     published: Published
@@ -129,3 +130,6 @@ en:
   Photos: Photos
   name: name
   update: Update
+  edit: Edit
+  Comment: Comment
+  delete: Delete

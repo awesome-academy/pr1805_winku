@@ -1,0 +1,12 @@
+vi:
+  dashboard: Trang chủ
+  user_managerment: Quản lí người dùng
+  post_managerment: Quản lí bài viết
+  authentication: Phân quyền
+  statistical: Thống kê
+  language: Ngôn ngữ
+  english: Tiếng anh
+  vietnamese: Tiếng việt
+  profile: Trang cá nhân
+  edit_profile: Chỉnh sửa trang cá nhân
+  logout: Đăng xuất
