@@ -1,0 +1,57 @@
+<%= form_for tour do |f| %>
+  <div class="central-meta">
+    <div class="new-postbox">
+      <figure>
+        <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>
+      </figure>
+      <div class="newpst-input">
+        <div class="form-group">
+          <%= f.text_field :title, placeholder: title , class: "form_control" %>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <h5><%= t("place") %></h5>
+              <%= f.select :place_id, places, {}, class: "dropdown" %>
+            </div>
+            <div class="form-group">
+              <h5><%= t("cost") %></h5>
+              <%= f.text_field :cost, placeholder: cost , class: "form_control" %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <h5><%= t("time") %></h5>
+              <%= f.text_field :time, placeholder: time , class: "form_control" %>
+            </div>
+            <div class="form-group">
+              <h5><%= t("vehicle") %></h5>
+              <%= f.text_field :vehicle, placeholder: vehicle , class: "form_control" %>
+            </div>
+          </div>
+        </div>
+        <h1><%= t("detail_tour") %></h1>
+        <%= f.text_area :content, class: "tinymce", rows:  40, cols: 80 %>
+        <%= tinymce %>
+        <div class="attachments">
+          <ul>
+            <li>
+              <i class="fa fa-image"></i>
+              <label class="fileContainer">
+                <%= f.fields_for :image_attributes do |image_f| %>
+                  <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
+                  <%= image_f.hidden_field :imageable_id, value: tour.id %>
+                  <%= image_f.hidden_field :imageable_type, value: "image" %>
+                  <%= image_f.hidden_field :image_cache %>
+                <% end %>
+              </label>
+            </li>
+            <li>
+              <%= f.submit button_submit, class: "btn btn-primary" %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

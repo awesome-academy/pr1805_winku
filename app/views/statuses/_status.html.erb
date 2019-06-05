@@ -27,10 +27,10 @@
            <%= status.content %>
           </p>
         </div>
+        <%= image_tag status.image.image_link.to_s if status.image.present? %>
         <div id="comments-<%= status.id %>">
           <%= render "comments/comment_list", commentable: status %>
         </div>
-        <%= image_tag status.image.image_link.to_s if status.image.present? %>
         <div class="we-video-info">
           <ul>
             <li>

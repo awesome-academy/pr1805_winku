@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :load_tour, only: [:edit, :update, :destroy]
+  before_action :load_tour, only: [:edit, :show, :update, :destroy]
 
   def index
     @tours = Tour.all
@@ -9,15 +9,37 @@ class ToursController < ApplicationController
     @tour = Tour.new
   end
 
+  def show
+  end
+
   def create
     @tour = current_user.tours.build tour_params
     if @tour.save
-      flash[:danger] = t("text.success")
+      flash[:success] = t("text.success")
       redirect_to tours_path
     else
       flash[:danger] = t("text.fails")
       redirect_to tours_path
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @tour.update tour_params
+      flash[:success] = t("text.success")
+      redirect_to tours_path
+    else
+      flash[:danger] = t("text.fails")
+      redirect_to tours_path
+    end
+  end
+
+  def destroy
+    @tour.destroy
+    flash[:success] = t("text.success")
+    redirect_to tours_path
   end
 
   private

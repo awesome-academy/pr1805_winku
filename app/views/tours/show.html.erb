@@ -1,0 +1,63 @@
+<div class="theme-layout">
+  <section>
+    <div class="gap gray-bg">
+      <div class="container-fluid">
+        <div class="central-meta">
+          <div class="user-post">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="row" id="page-contents">
+                  <div style="margin: 20px;">
+                    <h3><%= @tour.title %></h3>
+                    <% if @tour.user == current_user %>
+                      <%= link_to t("button.edit_tour"), edit_tour_path(@tour) %> -
+                      <%= link_to t("button.delete"), @tour, method: :delete, data: {confirm: t("text.confirm")} %>
+                    <% end %>
+                  </div>
+                  <div class="col-lg-8">
+                    <div id="post">
+                      <div class="central-meta">
+                        <div class="user-post">
+                          <div style="margin: 20px;">
+                            <%= image_tag @tour.image.image_link.to_s if @tour.image %>
+                          </div>
+                        </div>
+                        <hr>
+                        <div>
+                          <%=@tour.content.html_safe %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="central-meta">
+                      <div class="user-post">
+                        <div class="description">
+                          <h5><%= link_to @tour.title, tour_path(@tour) %></h5>
+                          <div class="row">
+                            <div class="col-lg-7">
+                              <h6><%= t("cost") %></h6>
+                              <h6><%= t("time") %></h6>
+                              <h6><%= t("place") %></h6>
+                              <h6><%= t("vehicle") %></h6>
+                            </div>
+                            <div class="col-lg-5">
+                              <h6>:<%= @tour.cost %></h6>
+                              <h6>:<%= @tour.time %></h6>
+                              <h6>:<%= @tour.place.name if @tour.place %></h6>
+                              <h6>:<%= @tour.vehicle %></h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
