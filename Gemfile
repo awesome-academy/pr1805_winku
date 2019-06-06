@@ -31,6 +31,7 @@ gem "omniauth"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
 gem "tinymce-rails"
+gem 'material_design_icons'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

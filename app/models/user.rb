@@ -13,6 +13,8 @@ class User < ApplicationRecord
     attributes['image_link'].blank?}
   has_many :comments, as: :commentable, dependent: :destroy
 
+  enum role: {admin: 1, user: 2, business: 3}, _prefix: :role
+
   def self.new_with_session params, session
     super.tap do |user|
       if data = session["devise.facebook_data"] &&
