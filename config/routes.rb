@@ -23,4 +23,9 @@ Rails.application.routes.draw do
       root "homes#index"
     end
   end
+  scope "(:locale)", locale: /en|vi/ do
+    namespace :admin do
+      root "homes#index"
+    end
+  end
 end
