@@ -10,3 +10,7 @@ en:
   profile: My Profile
   edit_profile: Edit profile
   logout: Logout
+  text:
+    success: Success!
+    fails: Fails
+    not_admin: You can not access this page!!!
