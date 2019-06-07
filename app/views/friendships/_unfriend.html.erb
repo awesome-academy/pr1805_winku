@@ -1,0 +1,6 @@
+<%= form_for (current_user.friendships.find_by friend_id: user.id), method: :delete, remote: true do |f| %>
+  <%= hidden_field_tag :friend_id, user.id %>
+  <%= f.submit I18n.t(".unfriend"), class: "btn btn-warning", data: { confirm: I18n.t(".they_will_miss_you") } %>
+<% end %>
+<br>
+<%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>

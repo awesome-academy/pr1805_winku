@@ -34,12 +34,23 @@
                             </span>
                             <span class="coments">
                               <i class="fa fa-comments"></i>
-                              <a title="" href="#">0</a>
+                              <%= @tour.comments.size %> comments
                             </span>
                           </div>
                         </div>
                         <div>
                           <%= @tour.content.html_safe %>
+                          <span><h4>Comments:</h4></span>
+                          <br>
+                          <div id="comments-<%= @tour.id %>">
+                            <%= render "comments/comment_list", commentable: @tour %>
+                          </div>
+                          <%= link_to new_comment_path(commentable_id: @tour.id, commentable_type: "tour"), class: "btn btn-success btn-comment", data:{ toggle: "collapse" }, remote: true, style: "color:#FFFFFF;" do %>
+                            Write Your Comment
+                          <% end %>
+                          <div id="<%= @tour.id %>" class="tour">
+                           <%= render "comments/comment_form", commentable: @tour %>
+                          </div>
                         </div>
                       </div>
                     </div>

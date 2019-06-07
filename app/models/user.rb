@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers:
-    [:facebook, :google_oauth2]
+    :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   before_save {self.email = email.downcase}
   before_create :set_default_role, :if => :new_record?
@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :tours, class_name: Tour.name
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :conversations, :foreign_key => :sender_id
+  has_many :friendships
+  has_many :friends, :through => :friendships
 
   accepts_nested_attributes_for :image, reject_if: proc {|attributes|
     attributes['image_link'].blank?}
@@ -46,5 +48,9 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name
     end
+  end
+
+  def friend_with? other_user
+    self.friends.include?(other_user)
   end
 end
