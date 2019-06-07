@@ -10,7 +10,7 @@
               </div>
               <div class="col-lg-6">
                 <div class="central-meta">
-                  <%= render "statuses/status_form", status: @status %>
+                  <%= render "statuses/status_form", status: @status, user: current_user %>
                 </div>
                 <div id="post">
                   <%= render "statuses/statuses", statuses: @statuses %>

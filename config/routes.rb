@@ -14,6 +14,14 @@ Rails.application.routes.draw do
     root "static_pages#index"
     resources :users
     resources :comments, except: :index
+    resources :conversations do
+      resources :messages
+    end
+  end
+  scope "(:locale)", locale: /en|vi/ do
+    namespace :admin do
+      root "homes#index"
+    end
   end
   scope "(:locale)", locale: /en|vi/ do
     namespace :admin do

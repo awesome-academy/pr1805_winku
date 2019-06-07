@@ -15,8 +15,10 @@
 //= require jquery3
 //= require popper
 //= require jquery
-//= require bootstrap
 //= require rails-ujs
+//= require bootstrap
+//= require private_pub
+//= require chat
 //= require activestorage
 //= require turbolinks
 //= require_tree .
