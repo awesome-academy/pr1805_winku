@@ -9,10 +9,10 @@
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false">
+          <%= link_to admin_users_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria: { expanded: "false" } do %>
             <i class="mdi mdi-face"></i>
             <span class="hide-menu"><%= t("user_managerment") %></span>
-          </a>
+          <% end %>
         </li>
         <li class="sidebar-item">
           <%= link_to admin_statuses_path, class: "sidebar-link waves-effect waves-dark", aria: { expanded: "false" } do %>

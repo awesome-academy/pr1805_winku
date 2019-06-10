@@ -15,8 +15,14 @@ class User < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :conversations, :foreign_key => :sender_id
 
-  enum role: {admin: 1, user: 2, business: 3}
+  enum role: { admin: 1, user: 2, business: 3 }
+  enum status: { block: 1, unblock: 2 }
   before_create :set_default_role, :if => :new_record?
+  before_create :set_default_status, :if => :new_record?
+
+  def set_default_status
+    self.role ||= :unblock
+  end
 
   def set_default_role
     self.role ||= :user
