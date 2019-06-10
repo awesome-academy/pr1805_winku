@@ -8,7 +8,7 @@
             <table id="zero_config" class="table table-striped table-bordered dataTable" role="grid" aria-describedby="zero_config_info">
               <thead>
                 <tr role="row">
-                  <th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 135px;">
+                  <th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 80px;">
                     <%= t("user")%>
                   </th>
                   <th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 135px;">
@@ -26,7 +26,7 @@
                   <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 97px;">
                     <%= t("cost")%>
                   </th>
-                  <th style="width: 30px;"></th>
+                  <th style="width: 40px;"></th>
                 </tr>
               </thead>
               <tbody>
@@ -39,14 +39,18 @@
                     <td><%= tour.vehicle %></td>
                     <td><%= tour.cost %></td>
                     <td>
-                      <%= link_to admin_status_path(tour) do %>
-                        <i class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.view")%>!"></i>
+                      <%= link_to admin_tour_path(tour) do %>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.view")%>!"><%= t("text.view")%></i>
                       <% end %>
-                      <%= link_to admin_status_path(tour) do %>
-                        <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.block")%>!"></i>
-                      <% end %>
-                      <%= link_to admin_status_path(tour) do %>
-                        <i class="fa fa-trash" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.delete")%>!"></i>
+                      <div id="block">
+                        <% if tour.block? %>
+                          <%= render "unlock_index", tour: tour %>
+                        <% else %>
+                          <%= render "lock_index", tour: tour %>
+                        <% end %>
+                      </div>
+                      <%= link_to admin_tour_path(tour) do %>
+                        <i class="fa fa-trash" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.delete")%>!"><%= t("text.delete")%></i>
                       <% end %>
                     </td>
                   </tr>

@@ -1,0 +1,7 @@
+<% if @tour.block? %>
+  $("#block").html("<%= j(render('admin/tours/unlock_index', tour: @tour)) %>");
+  $("#block_show").html("<%= j(render('admin/tours/unlock_show', tour: @tour)) %>");
+<% else %>
+  $("#block").html("<%= j(render('admin/tours/lock_index', tour: @tour)) %>");
+  $("#block_show").html("<%= j(render('admin/tours/lock_show', tour: @tour)) %>");
+<% end %>
