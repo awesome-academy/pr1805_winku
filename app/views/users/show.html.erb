@@ -52,7 +52,7 @@
                 <a class="" href="about.html" title="" data-ripple="">
                   <%= I18n.t ".about" %>
                 </a>
-                <%= link_to t("button.create_tour"), new_tour_path %>
+                <%= link_to t("button.create_tour"), new_tour_path if @user.business? %>
               </li>
             </ul>
           </div>

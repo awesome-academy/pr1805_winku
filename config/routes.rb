@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       root "homes#index"
       resources :statuses, except: [:new, :create, :edit]
       resources :tours, except: [:new, :create, :edit]
+      resources :users, except: [:new, :create, :edit]
     end
   end
 end

@@ -1,0 +1,8 @@
+vi:
+  activerecord:
+    model: Người dùng
+    attributes:
+      email: Tài khoản email
+      name: Tên tài khoản
+      role: Phân quyền
+      image: Ảnh đại diện
