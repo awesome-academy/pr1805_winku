@@ -10,3 +10,7 @@ vi:
   profile: Trang cá nhân
   edit_profile: Chỉnh sửa trang cá nhân
   logout: Đăng xuất
+  text:
+    success: Chúc mừng bạn đã thành công!
+    fails: Ôi! Lỗi rồi bạn nhé!
+    not_admin: Xin lỗi, bạn không có quyền truy cập trang này rồi!!!

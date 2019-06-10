@@ -5,7 +5,7 @@
     <% end  %>
   </div>
   <div class="top-area">
-    <ul class="main-menu w-70">
+    <ul class="main-menu w-100">
       <li>
         <a href="#" title=""><%= I18n.t ".Home" %></a>
         <ul>
@@ -37,16 +37,8 @@
           </li>
         </ul>
       </li>
-    </ul>
-    <ul class="main-menu">
       <% if user_signed_in? %>
-        <li class="hash-children">
-          <%= link_to users_path do %>
-            <i class="ti-comment-alt"></i>
-            Chat
-          <% end %>
-        </li>
-        <li>
+        <li style="float: right;">
           <div class="user-img">
             <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>
           </div>
@@ -75,17 +67,23 @@
           </ul>
           <%= current_user.name %>
         </li>
+        <li class="hash-children" style="float: right;">
+          <%= link_to users_path do %>
+            <i class="ti-comment-alt"></i>
+            Chat
+          <% end %>
+        </li>
       <% else %>
-        <li class="hash-children">
-          <%= link_to new_user_session_path do %>
-            <i class="ti-crown"></i>
-            <%= I18n.t ".Login" %>
-          <% end  %>
-        <li>
+        <li style="float: right;">
           <%= link_to users_path do %>
             <i class="ti-comment"></i>
           <% end %>
         </li>
+        <li class="hash-children" style="float: right;">
+          <%= link_to new_user_session_path do %>
+            <i class="ti-crown"></i>
+            <%= I18n.t ".Login" %>
+          <% end  %>
       <% end %>
     </ul>
   </div>

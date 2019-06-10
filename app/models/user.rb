@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :statuses, class_name: Status.name
   has_many :tours, class_name: Tour.name
+  before_save {self.email = email.downcase}
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and
   devise :database_authenticatable, :registerable,
@@ -14,7 +15,12 @@ class User < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :conversations, :foreign_key => :sender_id
 
-  enum role: {admin: 1, user: 2, business: 3}, _prefix: :role
+  enum role: {admin: 1, user: 2, business: 3}
+  before_create :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
 
   def self.new_with_session params, session
     super.tap do |user|
