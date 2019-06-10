@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="comment-widgets scrollable ps-container ps-theme-default" data-ps-id="767c4ef5-cf07-74cf-8555-87f663bd6fcd">
+          <div class="d-flex flex-row comment-row">
+            <div class="p-2">
+              <%= image_tag @status.user.image.image_link.to_s, alt: "user", width: "50", class: "rounded-circle" if @status.user.image.present? %>
+            </div>
+            <div class="comment-text w-100">
+              <h6 class="font-medium"><%= @status.user.name %></h6>
+              <div class="comment-footer">
+                <span class="text-muted float-right">
+                  <%= t("text.published") %>: <%= time_ago_in_words(@status.created_at) %>
+                </span>
+                <div style="float: left;" id="block_show">
+                  <% if @status.block? %>
+                    <%= render "unlock_show", status: @status%>
+                  <% else %>
+                    <%= render "lock_show", status: @status%>
+                  <% end %>
+                </div>
+                <%= link_to t("text.delete"), admin_status_path(@status), method: :delete, data: { confirm: t("text.confirm") }, class: "btn btn-danger btn-sm" %>
+              </div>
+              <hr>
+              <div class="row el-element-overlay">
+                <div class="col-lg-4 col-md-8">
+                  <div class="card">
+                    <div class="el-card-item">
+                      <div class="el-card-avatar el-overlay-1">
+                        <%= image_tag @status.image.image_link.to_s if @status.image.present? %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="m-b-15 d-block">
+                <%= @status.content %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,5 +4,6 @@ class AddColumToPost < ActiveRecord::Migration[5.2]
     add_column :posts, :time, :string
     add_column :posts, :cost, :string
     add_column :posts, :vehicle, :string
+    add_column :posts, :status, :integer
   end
 end

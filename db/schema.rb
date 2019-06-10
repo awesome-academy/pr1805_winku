@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 2019_06_06_062512) do
     t.string "time"
     t.string "cost"
     t.string "vehicle"
+    t.integer "status"
     t.index ["place_id"], name: "index_posts_on_place_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

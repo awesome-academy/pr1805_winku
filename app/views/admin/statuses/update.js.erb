@@ -1,0 +1,7 @@
+<% if @status.block? %>
+  $("#block").html("<%= j(render('admin/statuses/unlock_index', status: @status)) %>");
+  $("#block_show").html("<%= j(render('admin/statuses/unlock_show', status: @status)) %>");
+<% else %>
+  $("#block").html("<%= j(render('admin/statuses/lock_index', status: @status)) %>");
+  $("#block_show").html("<%= j(render('admin/statuses/lock_show', status: @status)) %>");
+<% end %>
