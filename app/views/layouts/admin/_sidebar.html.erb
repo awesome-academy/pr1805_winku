@@ -17,12 +17,14 @@
         <li class="sidebar-item">
           <%= link_to admin_statuses_path, class: "sidebar-link waves-effect waves-dark", aria: { expanded: "false" } do %>
             <i class="mdi mdi-relative-scale"></i>
-            <span class="hide-menu"><%= t("post_managerment") %></span>
+            <span class="hide-menu"><%= t("status_managerment") %></span>
           <% end %>
-          <ul aria-expanded="false" class="collapse first-level">
-            <li class="sidebar-item"><a href="form-basic.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic </span></a></li>
-            <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard </span></a></li>
-          </ul>
+        </li>
+        <li class="sidebar-item">
+          <%= link_to admin_tours_path, class: "sidebar-link waves-effect waves-dark", aria: { expanded: "false" } do %>
+            <i class="mdi mdi-relative-scale"></i>
+            <span class="hide-menu"><%= t("tour_managerment") %></span>
+          <% end %>
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false">

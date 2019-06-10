@@ -4,5 +4,6 @@ vi:
   time: Thời gian
   place: Địa điểm
   vehicle: Phương tiện
+  user: Tên người tạo
   detail_tour: Chi tiết chuyến đi
   update_tour: Cập nhật chuyến đi

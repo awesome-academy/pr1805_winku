@@ -2,6 +2,6 @@ vi:
   activerecord:
     model: Status
     attributes:
-      user: Ngưòi tạo
+      user: Người tạo
       content: Nội dung
       time: Thời gian tạo

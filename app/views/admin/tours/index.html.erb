@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= t("tour_managerment")%></h5>
+    <div class="table-responsive">
+      <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+        <div class="row">
+          <div class="col-sm-12">
+            <table id="zero_config" class="table table-striped table-bordered dataTable" role="grid" aria-describedby="zero_config_info">
+              <thead>
+                <tr role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 135px;">
+                    <%= t("user")%>
+                  </th>
+                  <th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 135px;">
+                    <%= t("title")%>
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 97px;">
+                    <%= t("place")%>
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 97px;">
+                    <%= t("time")%>
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 97px;">
+                    <%= t("vehicle")%>
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 97px;">
+                    <%= t("cost")%>
+                  </th>
+                  <th style="width: 30px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @tours.each do |tour| %>
+                  <tr role="row" class="odd">
+                    <td class="sorting_1"><%= tour.user.name %></td>
+                    <td><%= tour.title %></td>
+                    <td><%= tour.place.name %></td>
+                    <td><%= tour.time %></td>
+                    <td><%= tour.vehicle %></td>
+                    <td><%= tour.cost %></td>
+                    <td>
+                      <%= link_to admin_status_path(tour) do %>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.view")%>!"></i>
+                      <% end %>
+                      <%= link_to admin_status_path(tour) do %>
+                        <i class="fa fa-lock" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.block")%>!"></i>
+                      <% end %>
+                      <%= link_to admin_status_path(tour) do %>
+                        <i class="fa fa-trash" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.delete")%>!"></i>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th rowspan="1" colspan="1">
+                    <%= t("user")%>
+                  </th>
+                  <th rowspan="1" colspan="1">
+                    <%= t("title")%>
+                  </th>
+                  <th rowspan="1" colspan="1">
+                    <%= t("place")%>
+                  </th>
+                  <th rowspan="1" colspan="1">
+                    <%= t("time")%>
+                  </th>
+                  <th rowspan="1" colspan="1">
+                    <%= t("vehicle")%>
+                  </th>
+                  <th rowspan="1" colspan="1">
+                    <%= t("cost")%>
+                  </th>
+                  <th rowspan="1" colspan="1"></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

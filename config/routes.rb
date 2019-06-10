@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     end
     namespace :admin do
       root "homes#index"
-      resources :statuses
+      resources :statuses, except: [:new, :create, :edit]
+      resources :tours, except: [:new, :create, :edit]
     end
   end
 end
