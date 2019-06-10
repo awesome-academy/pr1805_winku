@@ -16,7 +16,7 @@ vi:
     success: Chúc mừng bạn đã thành công!
     fails: Ôi! Lỗi rồi bạn nhé!
     not_admin: Xin lỗi, bạn không có quyền truy cập trang này rồi!!!
-    view: Xem chi tiết
+    view: Chi tiết
     block: Khóa
     un_block: Mở khóa
     delete: Xóa

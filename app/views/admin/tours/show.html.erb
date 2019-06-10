@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="scrollable ps-container ps-theme-default" data-ps-id="767c4ef5-cf07-74cf-8555-87f663bd6fcd" style="margin: 10px;">
+          <div class="d-flex flex-row comment-row">
+            <div class="p-2">
+              <%= image_tag @tour.user.image.image_link.to_s, alt: "user", width: "50", class: "rounded-circle" if @tour.user.image.present? %>
+            </div>
+            <div class="comment-text w-100">
+              <h6 class="font-medium"><%= @tour.user.name %></h6>
+              <div class="comment-footer">
+                <span class="text-muted float-right">
+                  <%= t("text.published") %>: <%= time_ago_in_words(@tour.created_at) %>
+                </span>
+                <div style="float: left;" id="block_show">
+                  <% if @tour.block? %>
+                    <%= render "unlock_show", tour: @tour%>
+                  <% else %>
+                    <%= render "lock_show", tour: @tour%>
+                  <% end %>
+                </div>
+                <%= link_to t("text.delete"), admin_tour_path(@tour), method: :delete, data: { confirm: t("text.confirm") }, class: "btn btn-danger btn-sm" %>
+              </div>
+              <hr>
+              <h4><%= link_to @tour.title, tour_path(@tour) %></h4>
+              <div class="row">
+                <div class="col-lg-7">
+                  <h6><%= t("cost") %></h6>
+                  <h6><%= t("time") %></h6>
+                  <h6><%= t("place") %></h6>
+                  <h6><%= t("vehicle") %></h6>
+                </div>
+                <div class="col-lg-5">
+                  <h6>:<%= @tour.cost %></h6>
+                  <h6>:<%= @tour.time %></h6>
+                  <h6>:<%= @tour.place.name if @tour.place %></h6>
+                  <h6>:<%= @tour.vehicle %></h6>
+                </div>
+              </div>
+              <hr>
+              <div class="row el-element-overlay">
+                <div class="col-lg-4 col-md-8">
+                  <div class="card">
+                    <div class="el-card-item">
+                      <div class="el-card-avatar el-overlay-1">
+                        <%= image_tag @tour.image.image_link.to_s if @tour.image.present? %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="m-b-15 d-block">
+                <%= @tour.content.html_safe %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
