@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    model: Status
+    attributes:
+      user: User
+      content: Content
+      time: Time

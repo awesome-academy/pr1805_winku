@@ -1,0 +1,7 @@
+vi:
+  activerecord:
+    model: Status
+    attributes:
+      user: Ngưòi tạo
+      content: Nội dung
+      time: Thời gian tạo

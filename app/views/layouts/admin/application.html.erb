@@ -19,9 +19,18 @@
         <% elsif alert %>
           <p class="alert"><%= alert %></p>
         <% end %>
-        <%= yield %>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
         <%= render "layouts/admin/footer" %>
       </div>
     </div>
+    <script>
+      $('#zero_config').DataTable();
+    </script>
   </body>
 </html>
