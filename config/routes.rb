@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#index"
     get "/signin", to: "sessions#new"
-    resources :statuses, only: [:create, :update, :edit, :destroy]
     get "/timeline", to: "users#index"
+    resources :statuses, only: [:create, :update, :edit, :destroy]
     resources :tours
     resources :users
+    resources :comments
     resources :posts, only: [:create, :update, :edit, :destroy] do
       resources :comments, except: :index
     end
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     end
     namespace :admin do
       root "homes#index"
+      resources :statuses
     end
   end
 end

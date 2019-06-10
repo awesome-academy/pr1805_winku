@@ -2,6 +2,8 @@ vi:
   dashboard: Trang chủ
   user_managerment: Quản lí người dùng
   post_managerment: Quản lí bài viết
+  status_managerment: Quản lí bài viết cá nhân
+  tour_managerment: Quản lí bài viết du lịch
   authentication: Phân quyền
   statistical: Thống kê
   language: Ngôn ngữ
@@ -14,3 +16,7 @@ vi:
     success: Chúc mừng bạn đã thành công!
     fails: Ôi! Lỗi rồi bạn nhé!
     not_admin: Xin lỗi, bạn không có quyền truy cập trang này rồi!!!
+    view: Xem chi tiết
+    block: Khóa
+    un_block: Mở khóa
+    delete: Xóa

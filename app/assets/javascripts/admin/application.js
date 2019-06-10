@@ -14,4 +14,7 @@
 //= require ./lib/jquery.flot.stack.js
 //= require ./lib/jquery.flot.crosshair.js
 //= require ./lib/jquery.flot.tooltip.min.js
+//= require ./lib/jquery.multicheck.js
 //= require ./lib/chart-page-init.js
+//= require ./lib/datatable-checkbox-init.js
+//= require ./lib/datatables.min.js

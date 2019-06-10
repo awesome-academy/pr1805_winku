@@ -2,6 +2,8 @@ en:
   dashboard: Dashboard
   user_managerment: User Managerment
   post_managerment: Post Managerment
+  status_managerment: Status Managerment
+  tour_managerment: Tour Managerment
   authentication: Authentication
   statistical: Statistical
   language: Language
@@ -14,3 +16,7 @@ en:
     success: Success!
     fails: Fails
     not_admin: You can not access this page!!!
+    view: View
+    block: Block
+    un_block: UnBlock
+    delete: Delete

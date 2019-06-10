@@ -25,7 +25,7 @@ class StatusesController < ApplicationController
   def update
     @status.update status_params
     respond_to do |format|
-      format.html { render :edit}
+      format.html { redirect_to root_path}
       format.js
     end
   end

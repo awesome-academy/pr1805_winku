@@ -10,13 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require tinymce
-//= require cloudinary
 //= require jquery3
 //= require popper
 //= require jquery
 //= require rails-ujs
 //= require bootstrap
+//= require tinymce
+//= require cloudinary
 //= require private_pub
 //= require chat
 //= require activestorage

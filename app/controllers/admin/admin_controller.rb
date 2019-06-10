@@ -10,7 +10,6 @@ class Admin::AdminController < ApplicationController
 
   def ensure_admin!
     if current_user.admin?
-      flash[:notice] = t("text.success")
       return true
     else
       flash[:alert] = t("text.not_admin")
