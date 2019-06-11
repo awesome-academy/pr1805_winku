@@ -1,24 +1,27 @@
 class User < ApplicationRecord
-  has_many :posts, dependent: :destroy
-  has_many :statuses, class_name: Status.name
-  has_many :tours, class_name: Tour.name
-  before_save {self.email = email.downcase}
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers:
     [:facebook, :google_oauth2]
+
+  before_save {self.email = email.downcase}
+  before_create :set_default_role, :if => :new_record?
+  before_create :set_default_status, :if => :new_record?
+
   belongs_to :business, optional: true
   has_one :image, as: :imageable, dependent: :destroy
-  accepts_nested_attributes_for :image, reject_if: proc {|attributes|
-    attributes['image_link'].blank?}
+  has_many :posts, dependent: :destroy
+  has_many :statuses, class_name: Status.name
+  has_many :tours, class_name: Tour.name
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :conversations, :foreign_key => :sender_id
 
+  accepts_nested_attributes_for :image, reject_if: proc {|attributes|
+    attributes['image_link'].blank?}
+
   enum role: { admin: 1, user: 2, business: 3 }
   enum status: { block: 1, unblock: 2 }
-  before_create :set_default_role, :if => :new_record?
-  before_create :set_default_status, :if => :new_record?
+
+  scope :newest, -> { order created_at: :desc }
 
   def set_default_status
     self.role ||= :unblock

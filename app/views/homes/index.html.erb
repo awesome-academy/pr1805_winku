@@ -1,0 +1,74 @@
+<div class="theme-layout">
+  <section>
+    <div class="gap gray-bg">
+      <div class="container-fluid">
+        <div class="row" id="page-contents">
+          <div class="col-lg-3">
+            <%= render "sidebars/sidebar-3" %>
+          </div>
+          <div class="col-lg-9">
+            <div class="blog-sec right-pading">
+              <div class="post-filter-sec">
+                <form method="post" class="filter-form">
+                  <input type="post" placeholder="Search post">
+                  <button><i class="ti-search"></i></button>
+                </form>
+                <div class="purify">
+                  <span>filter by</span>
+                  <select style="display: none;">
+                    <option>All categories</option>
+                    <option>By Favouirtes</option>
+                    <option>By Likes</option>
+                  </select>
+                  <select style="display: none;">
+                    <option>Assending A-Z</option>
+                    <option>Desending Z-A</option>
+                    <option>Desending (date)</option>
+                    <option>Asending (date)</option>
+                  </select>
+                  <a href="#" title="">purify</a>
+                </div>
+              </div>
+              <div class="row" id="page-contents">
+                <div class="col-lg-12">
+                  <h2><%= t("text.place_newest") %></h2>
+                  <hr>
+                </div>
+                <div class="col-lg-12">
+                  <div class="row masonry" style="position: relative; height: 647.624px;">
+                    <% @places.each do |place| %>
+                      <div class="hand col-lg-3 col-sm-6" style="position: absolute; float: left; top: 0px;">
+                        <div class="portfolio-box">
+                          <%= image_tag "123.jpeg" %>
+                          <div class="overlinks">
+                            <h4><%= link_to place.name, "#" %></h4>
+                            <ul class="cate">
+                              <li><%= link_to "", "#" %></li>
+                              <li><%= link_to "", "#" %></li>
+                              <li><%= link_to "", "#" %></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2><%= t("text.tour_newest") %></h2>
+                  <hr>
+                </div>
+                <% @tours.each do |tour| %>
+                  <div class="col-lg-6 col-sm-8">
+                    <%= render "tours/tour", tour: tour %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

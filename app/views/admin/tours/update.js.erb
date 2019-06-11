@@ -1,6 +1,6 @@
 <% if @tour.block? %>
   $("#block-<%= @tour.id %>").html("<%= j(render('admin/tours/unlock_index', tour: @tour)) %>");
-  $("#block_show-#{@tour.id}").html("<%= j(render('admin/tours/unlock_show', tour: @tour)) %>");
+  $("#block_show-<%= @tour.id %>").html("<%= j(render('admin/tours/unlock_show', tour: @tour)) %>");
 <% else %>
   $("#block-<%= @tour.id %>").html("<%= j(render('admin/tours/lock_index', tour: @tour)) %>");
   $("#block_show-<%= @tour.id %>").html("<%= j(render('admin/tours/lock_show', tour: @tour)) %>");

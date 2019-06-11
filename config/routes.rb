@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   scope "(:locale)", locale: /en|vi/ do
-    root "static_pages#index"
+    root "homes#index"
     get "/signin", to: "sessions#new"
-    get "/timeline", to: "users#index"
+    get "/timeline", to: "static_pages#index"
     resources :statuses, only: [:create, :update, :edit, :destroy]
     resources :tours
     resources :users

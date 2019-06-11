@@ -18,11 +18,26 @@
                     <div id="post">
                       <div class="central-meta">
                         <div class="user-post">
-                          <div style="margin: 20px;">
+                          <div style="margin: 20px; width: 40%; height: 30%">
                             <%= image_tag @tour.image.image_link.to_s if @tour.image %>
                           </div>
                         </div>
-                        <hr>
+                        <div class="detail-meta" style="margin: 0px;">
+                          <div class="post-time">
+                            <div class="author-thumb" style="width: 5%">
+                              <%= image_tag @tour.user.image.image_link.to_s if @tour.user.image %>
+                            </div>
+                            <span>by <%= @tour.user.name %></span>
+                            <span class="post-date">
+                              <i class="fa fa-calendar"></i>
+                              <%= time_ago_in_words(@tour.created_at) %>
+                            </span>
+                            <span class="coments">
+                              <i class="fa fa-comments"></i>
+                              <a title="" href="#">0</a>
+                            </span>
+                          </div>
+                        </div>
                         <div>
                           <%= @tour.content.html_safe %>
                         </div>

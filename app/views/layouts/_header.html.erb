@@ -7,13 +7,13 @@
   <div class="top-area">
     <ul class="main-menu w-100">
       <li>
-        <a href="#" title=""><%= I18n.t ".Home" %></a>
+        <%= link_to t("Home"), root_path %></a>
         <ul>
           <li><a href="index.html" title="">Home Social</a></li>
         </ul>
       </li>
       <li>
-        <a href="#" title=""><%= I18n.t ".Timeline" %></a>
+        <%= link_to t("Timeline"), timeline_path %>
         <ul>
           <li><a href="time-line.html" title="">timeline</a></li>
         </ul>

@@ -15,7 +15,9 @@
                       <div class="user-post">
                         <% @tours.each do |tour| %>
                           <div class="row col-lg-6" style="float: left;">
-                            <%= render "tours/tour", tour: tour %>
+                            <div class="col-lg-12">
+                              <%= render "tours/tour", tour: tour %>
+                            </div>
                           </div>
                         <% end %>
                       </div>
