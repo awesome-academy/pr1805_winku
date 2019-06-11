@@ -1,0 +1,30 @@
+<aside class="sidebar static">
+  <div class="widget">
+    <h4 class="widget-title"><%= t("text.place") %></h4>
+    <ul class="naves">
+      <% @places.each do |place|%>
+        <li>
+          <i class="ti-clipboard"></i>
+          <%= link_to place.name, "#" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="widget stick-widget">
+    <h4 class="widget-title"><%= t("text.business")%></h4>
+    <ul class="followers">
+      <% @users.each do |user| %>
+        <li>
+          <figure>
+            <%= image_tag user.image.image_link.to_s if user.image.present? %>
+          </figure>
+          <div class="friend-meta">
+            <h4><%= link_to user.name, user_path(user) %></h4>
+            <a href="#" title="" class="underline"><%= t("text.follow") %></a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div><!-- who's following -->
+</aside>
+

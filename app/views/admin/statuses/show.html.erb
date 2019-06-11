@@ -13,7 +13,7 @@
                 <span class="text-muted float-right">
                   <%= t("text.published") %>: <%= time_ago_in_words(@status.created_at) %>
                 </span>
-                <div style="float: left;" id="block_show-<%= @status.id %>}">
+                <div style="float: left;" id="block_show-<%= @status.id %>">
                   <% if @status.block? %>
                     <%= render "unlock_show", status: @status%>
                   <% else %>

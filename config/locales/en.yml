@@ -17,6 +17,11 @@ en:
     fails: Fails
     language: Language
     confirm: Are you want to delete, sure?
+    business: Business to like
+    place: Place
+    place_newest: Place newest
+    tour_newest: Tour newest
+    follow: Follow Page
   datetime:
     distance_in_words:
       about_x_hours:

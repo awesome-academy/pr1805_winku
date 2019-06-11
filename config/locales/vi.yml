@@ -17,6 +17,11 @@ vi:
     fails: Lỗi
     language: Ngôn ngữ
     confirm: Bạn có chắc chắn muốn xóa?
+    business: Doanh nghiệp được yêu thích
+    place: Địa điểm phổ biến
+    place_newest: Địa điểm nổi bật
+    tour_newest: Bài viết mới nhất
+    follow: Theo dõi trang
   datetime:
     distance_in_words:
       about_x_hours:

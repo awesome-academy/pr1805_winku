@@ -1,26 +1,30 @@
-<%= link_to tour_path(tour) do %>
-  <div class="central-meta" style="margin: 10px; height: 500px;">
-    <div class="user-post">
-      <div style="margin: 30px; height: 170px">
-        <%= image_tag tour.image.image_link.to_s if tour.image %>
+<div class="g-post-classic">
+  <figure>
+    <%= image_tag tour.image.image_link.to_s if tour.image %>
+    <i class="fa fa-image"></i>
+  </figure>
+  <div class="g-post-meta">
+    <div class="post-title">
+      <h4 style="height: 80px; overflow: hidden;"><%= link_to tour.title, tour_path(tour) %></h4>
+      <span class="p-date">by <%= link_to tour.user.name, user_path(tour.user) %> - <%= time_ago_in_words(tour.created_at) %></span>
+    </div>
+    <div class="row">
+      <div class="col-lg-5">
+        <h6><%= t("cost") %></h6>
+        <h6><%= t("time") %></h6>
+        <h6><%= t("place") %></h6>
+        <h6><%= t("vehicle") %></h6>
       </div>
-      <div class="description">
-        <h3 style="height: 70px; overflow: hidden;"><%= link_to tour.title, tour_path(tour) %></h3>
-        <div class="row">
-          <div class="col-lg-7">
-            <h6><%= t("cost") %></h6>
-            <h6><%= t("time") %></h6>
-            <h6><%= t("place") %></h6>
-            <h6><%= t("vehicle") %></h6>
-          </div>
-          <div class="col-lg-5">
-            <h6>:<%= tour.cost %></h6>
-            <h6>:<%= tour.time %></h6>
-            <h6>:<%= tour.place.name if tour.place %></h6>
-            <h6>:<%= tour.vehicle %></h6>
-          </div>
-        </div>
+      <div class="col-lg-7">
+        <h6>:<%= tour.cost %></h6>
+        <h6>:<%= tour.time %></h6>
+        <h6>:<%= tour.place.name if tour.place %></h6>
+        <h6>:<%= tour.vehicle %></h6>
       </div>
     </div>
+    <div class="g-post-ranking">
+      <a title="" href="#" class="likes"><i class="fa fa-heart-o"></i>10 likes</a>
+      <a title="" href="#" class="coments"><i class="fa fa-comment-o"></i>5 comments</a>
+    </div>
   </div>
-<% end %>
+</div>
