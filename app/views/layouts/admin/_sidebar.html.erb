@@ -2,11 +2,17 @@
   <div class="scroll-sidebar">
     <nav class="sidebar-nav">
       <ul id="sidebarnav" class="p-t-30 in">
-        <li class="sidebar-item selected">
-          <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="#" aria-expanded="false">
+        <li class="sidebar-item">
+          <%= link_to admin_root_path, class: "sidebar-link waves-effect waves-dark sidebar-link active", aria: { expanded: "false" } do %>
             <i class="mdi mdi-view-dashboard"></i>
             <span class="hide-menu"><%= t("dashboard") %></span>
-          </a>
+          <% end %>
+        </li>
+        <li class="sidebar-item">
+          <%= link_to "#", class: "sidebar-link waves-effect waves-dark sidebar-link", aria: { expanded: "false" } do %>
+            <i class="mdi mdi-chart-bar"></i>
+            <span class="hide-menu"><%= t("statistical") %></span>
+          <% end %>
         </li>
         <li class="sidebar-item">
           <%= link_to admin_users_path, class: "sidebar-link waves-effect waves-dark sidebar-link", aria: { expanded: "false" } do %>
@@ -25,18 +31,6 @@
             <i class="mdi mdi-relative-scale"></i>
             <span class="hide-menu"><%= t("tour_managerment") %></span>
           <% end %>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="charts.html" aria-expanded="false">
-            <i class="mdi mdi-chart-bar"></i>
-            <span class="hide-menu"><%= t("statistical") %></span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="widgets.html" aria-expanded="false">
-            <i class="mdi mdi-chart-bubble"></i>
-            <span class="hide-menu"></span>
-          </a>
         </li>
         <li class="sidebar-item">
           <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false">

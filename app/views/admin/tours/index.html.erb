@@ -42,7 +42,7 @@
                       <%= link_to admin_tour_path(tour) do %>
                         <i class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.view")%>!"><%= t("text.view")%></i>
                       <% end %>
-                      <div id="block">
+                      <div id="block-<%= tour.id %>">
                         <% if tour.block? %>
                           <%= render "unlock_index", tour: tour %>
                         <% else %>
