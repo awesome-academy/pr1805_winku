@@ -6,10 +6,14 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def update
-    if @user.block?
-      @user.update status: :unblock
+    if params[:role]
+      @user.update role: params[:role]
     else
-      @user.update status: :block
+      if @user.block?
+        @user.update status: :unblock
+      else
+        @user.update status: :block
+      end
     end
     respond_to do |format|
       format.html { redirect_back(fallback_location: root_path)}

@@ -1,5 +1,5 @@
 <% if @user.block? %>
-  $("#block").html("<%= j(render('admin/users/unlock_index', user: @user)) %>");
+  $("#block-<%= @user.id %>").html("<%= j(render('admin/users/unlock_index', user: @user)) %>");
 <% else %>
-  $("#block").html("<%= j(render('admin/users/lock_index', user: @user)) %>");
+  $("#block-<%= @user.id %>").html("<%= j(render('admin/users/lock_index', user: @user)) %>");
 <% end %>

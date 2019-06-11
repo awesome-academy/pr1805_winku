@@ -33,9 +33,15 @@
                       </div>
                     </td>
                     <td><%= user.email %></td>
-                    <td><%= user.role %></td>
                     <td>
-                      <div id="block">
+                      <%= form_for [:admin, user], method: :patch, value: user.id do |f| %>
+                        <div class="form-group">
+                          <%= f.select :role, options_for_select([["admin", :admin],["user", :user],["business", :business]], selected: user.role), {}, class: "form-control", id: "sel1" %>
+                        </div>
+                      <% end %>
+                    </td>
+                    <td>
+                      <div id="block-<%= user.id %>">
                         <% if user.block? %>
                           <%= render "unlock_index", user: user %>
                         <% else %>
