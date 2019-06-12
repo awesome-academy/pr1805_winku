@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= t("place_managerment")%></h5>
+    <div class="table-responsive">
+      <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+        <div class="row">
+          <div class="col-sm-12">
+            <table id="zero_config" class="table table-striped table-bordered dataTable" role="grid" aria-describedby="zero_config_info">
+              <thead>
+                <tr role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 80px;">
+                    <%= t("activerecord.attributes.name_place")%>
+                  </th>
+                  <th class="sorting" tabindex="0" ẩi-controls="zero_config" rowspan="1" colspan="1" ẩi-label="Ofice: activate to sỏt column ascending" style="width: 80px;">
+                    <%= t("activerecord.attributes.image_place")%>
+                  </th>
+                  <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">
+                    <%= t("activerecord.attributes.detail_place")%>
+                  </th>
+                  <th style="width: 50px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @places.each do |place| %>
+                  <tr role="row" class="odd">
+                    <td class="sorting_1"><%= place.name %></td>
+                    <td>
+                      <div class="p-2">
+                        <%= image_tag place.image.image_link.to_s, alt: "place", width: "80", class: "rounded-circle" if place.image %>
+                      </div>
+                    </td>
+                    <td><%= place.detail %></td>
+                    <td>
+                      <%= link_to admin_place_path(place), method: :delete, data: { confirm: t("text.confirm") } do %>
+                        <i class="fa fa-trash" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.delete")%>!"><%= t("text.delete")%></i>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th rowspan="1" colspan="1">
+                    <%= t("activerecord.attributes.name_place")%>
+                  </th>
+                  <th rowspan="1" colspan="1">
+                    <%= t("activerecord.attributes.image_place")%>
+                  </th>
+                  <th rowspan="1" colspan="1">
+                    <%= t("activerecord.attributes.detail_place")%>
+                  </th>
+                  <th rowspan="1" colspan="1"></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

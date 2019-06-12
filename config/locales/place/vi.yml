@@ -1,0 +1,7 @@
+vi:
+  activerecord:
+    model: Place
+    attributes:
+      name_place: Tên
+      image_place: Hình ảnh
+      detail_place: Mô tả

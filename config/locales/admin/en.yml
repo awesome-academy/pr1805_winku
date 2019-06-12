@@ -4,6 +4,8 @@ en:
   post_managerment: Post Managerment
   status_managerment: Status Managerment
   tour_managerment: Tour Managerment
+  place_managerment: Place Managerment
+  other_managerment: Other Managerment
   authentication: Authentication
   statistical: Statistical
   language: Language
