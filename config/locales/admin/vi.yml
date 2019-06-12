@@ -4,6 +4,8 @@ vi:
   post_managerment: Quản lí bài viết
   status_managerment: Quản lí bài viết cá nhân
   tour_managerment: Quản lí bài viết du lịch
+  place_managerment: Quản lí địa điểm du lịch
+  other_managerment: Quản lí mục khác
   authentication: Phân quyền
   statistical: Thống kê
   language: Ngôn ngữ

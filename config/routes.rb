@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :statuses, except: [:new, :create, :edit]
       resources :tours, except: [:new, :create, :edit]
       resources :users, except: [:new, :create, :edit]
+      resources :places
     end
   end
 end

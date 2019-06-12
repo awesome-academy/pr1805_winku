@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    model: Place
+    attributes:
+      name_place: Name
+      image_place: Image
+      detail_place: Detail

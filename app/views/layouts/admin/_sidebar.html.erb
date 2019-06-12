@@ -28,16 +28,30 @@
         </li>
         <li class="sidebar-item">
           <%= link_to admin_tours_path, class: "sidebar-link waves-effect waves-dark", aria: { expanded: "false" } do %>
-            <i class="mdi mdi-relative-scale"></i>
+            <i class="mdi mdi-receipt"></i>
             <span class="hide-menu"><%= t("tour_managerment") %></span>
           <% end %>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false">
-            <i class="mdi mdi-account-key"></i>
-            <span class="hide-menu"><%= t("authentication") %></span>
+          <a class="sidebar-link has-arrow waves-effect waves-dark" href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+            <i class="mdi mdi-chart-bubble"></i>
+            <span class="hide-menu"><%= t("other_managerment")%></span>
           </a>
-        </li>
+          <ul class="collapse  first-level" id="homeSubmenu">
+            <li class="sidebar-item">
+              <%= link_to admin_places_path, class: "sidebar-link" do %>
+                <i class="mdi mdi-note-plus"></i>
+                <span class="hide-menu"><%= t("place_managerment")%></span>
+              <% end %>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link waves-effect waves-dark sidebar-link" href="javascript:void(0)" aria-expanded="false">
+                <i class="mdi mdi-account-key"></i>
+                <span class="hide-menu"><%= t("authentication") %></span>
+              </a>
+            </li>
+          </ul>
+      </li>
       </ul>
     </nav>
   </div>

@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   before_action :load_tour, only: [:edit, :show, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     @tours = Tour.all
