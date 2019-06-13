@@ -3,15 +3,25 @@
     <div class="col-lg-9">
       <div class="inbox-sec">
         <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-4 float-right" id="user-chat">
-            <%= image_tag user.image.image_link.to_s if user.image.present? %>
-            &nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="col-lg-9 col-md-9 col-sm-8 float-right">
-            &nbsp;&nbsp;
-            <strong class="mb-5"><%= link_to "#{user.name}", user %></strong>
+          <div style= "margin: 20px">
+            <div class="col-lg-3 col-md-3 col-sm-4 float-left" id="user-chat">
+              <%= image_tag user.image.image_link.to_s if user.image.present? %>
+              &nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-8 float-right">
+              &nbsp;&nbsp;
+              <strong class="mb-5"><%= link_to "#{user.name}", user %></strong>
+              <br>
+              <br>
+              <div id="action-<%= user.id %>">
+                <% if current_user.friend_with? user %>
+                  <%= render "friendships/unfriend", user: user %>
+                <% else %>
+                  <%= render "friendships/form_friend", user: user %>
+                <% end %>
+              </div>
+            </div>
             <br>
-            <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation", "data-sid" => current_user.id, "data-rip" => user.id %>
           </div>
         </div>
       </div>

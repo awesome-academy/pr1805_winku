@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
   scope "(:locale)", locale: /en|vi/ do
     root "homes#index"
     get "/signin", to: "sessions#new"
@@ -7,13 +8,17 @@ Rails.application.routes.draw do
     resources :statuses, only: [:create, :update, :edit, :destroy]
     resources :tours
     resources :users
-    resources :comments
+    resources :comments, except: :index
     resources :posts, only: [:create, :update, :edit, :destroy] do
       resources :comments, except: :index
     end
     resources :conversations do
       resources :messages
     end
+    resources :friendships, only: [:create, :destroy]
+  end
+
+  scope "(:locale)", locale: /en|vi/ do
     namespace :admin do
       root "homes#index"
       resources :statuses, except: [:new, :create, :edit]

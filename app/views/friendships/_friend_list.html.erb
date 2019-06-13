@@ -1,0 +1,14 @@
+  <div class="widget stick-widget">
+    <h4 class="widget-title"><%= I18n.t ".Friends" %></h4>
+    <ul class="followers">
+      <% user.friendships.each do |f| %>
+        <li>
+          <figure><%= image_tag f.friend.image.image_link.to_s if f.friend.image.present? %></figure>
+          <div class="friend-meta">
+            <h4><%= link_to f.friend.name, f.friend %></h4>
+            <%= link_to "Send Message", "#", class: "btn btn-basic btn-xs start-conversation", "data-sid" => f.friend.id, "data-rip" => current_user.id %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div><!-- who's following -->

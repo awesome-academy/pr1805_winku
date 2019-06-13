@@ -6,6 +6,7 @@
         <%= f.hidden_field :commentable_type, value: commentable.class.name.downcase %>
         <%= f.text_area :content, class: "form-control" %>
       </div>
+      <br>
       <%= f.submit I18n.t(".Comment"), class: "btn btn-primary xs" %>
     <% end %>
   </div>

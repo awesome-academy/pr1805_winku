@@ -4,6 +4,9 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new commentable: @commentable
+    respond_to do |format|
+      format.js
+     end
   end
 
   def create
