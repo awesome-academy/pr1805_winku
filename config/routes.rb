@@ -16,9 +16,7 @@ Rails.application.routes.draw do
       resources :messages
     end
     resources :friendships, only: [:create, :destroy]
-  end
-
-  scope "(:locale)", locale: /en|vi/ do
+    resources :places, only: :show
     namespace :admin do
       root "homes#index"
       resources :statuses, except: [:new, :create, :edit]
