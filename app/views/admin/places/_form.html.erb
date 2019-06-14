@@ -1,0 +1,43 @@
+<%= form_with model: [:admin, place], url: url, local: true do |f| %>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title"><%= header %></h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label"><%= label_name %></label>
+            <div class="col-sm-9">
+              <%= f.text_field :name, placeholder: name , class: "form_control col-sm-10" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="fname" class="col-sm-3 text-right control-label col-form-label"><%= label_detail %></label>
+            <div class="col-sm-9">
+              <%= f.text_area :detail, rows: 5, placeholder: detail, class: "form_control col-sm-10" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3 text-right control-label col-form-label">
+              <%= image %>
+            </label>
+            <div class="col-md-9">
+              <%= f.fields_for :image_attributes do |image_f| %>
+                <%= image_f.file_field :image_link, class: "input-file previewIMG" %>
+                <%= image_f.hidden_field :imageable_id, value: place.id %>
+                <%= image_f.hidden_field :imageable_type, value: "Place" %>
+                <%= image_f.hidden_field :image_cache %>
+              <% end %>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          <%= t('button.cancel') %>
+        </button>
+        <%= f.submit button, class: "btn btn-primary" %>
+      </div>
+    </div>
+<% end %>

@@ -9,6 +9,9 @@ en:
     delete: Delete
     create_tour: Create Tour
     edit_tour: Edit tour
+    create: Create
+    cancel: Cancel
+    update: Update
   text:
     tour: Tours
     published: Published
@@ -22,6 +25,8 @@ en:
     place_newest: Place newest
     tour_newest: Tour newest
     follow: Follow Page
+    new_place: New place
+    edit_place: Edit place
   datetime:
     distance_in_words:
       about_x_hours:

@@ -89,7 +89,7 @@
               <div class="col-lg-6">
                 <div class="loadMore">
                   <div class="central-meta">
-                    <%= render "statuses/status_form", status: @status, user: @user %>
+                    <%= render "statuses/status_form", status: @status, user: @user if current_user == @user %>
                   </div>
                   <div id="post">
                     <%= render "statuses/statuses", statuses: @statuses %>

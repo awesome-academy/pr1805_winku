@@ -1,0 +1,5 @@
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <%= render "form", url: admin_places_path, header: t("text.new_place"), label_name: t("activerecord.attributes.name_place"), name: t("activerecord.attributes.name_place") + "...", label_detail: t("activerecord.attributes.detail_place"), detail: t("activerecord.attributes.detail_place") + "...", image: t("activerecord.attributes.image_place"), button: t("button.create"), place: @place %>
+  </div>
+</div>
