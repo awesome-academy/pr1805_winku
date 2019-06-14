@@ -1,6 +1,12 @@
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title"><%= t("place_managerment")%></h5>
+    <h3 class="card-title" style="text-align: center;"><%= t("place_managerment")%></h3>
+    <div style="text-align: center;">
+      <%= link_to "#", class: "btn btn-primary", data: {toggle: "modal", target: "#myModal"} do %>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <span><%= t("text.new_place") %></span>
+      <% end %>
+    </div>
     <div class="table-responsive">
       <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
         <div class="row">
@@ -22,7 +28,7 @@
               </thead>
               <tbody>
                 <% @places.each do |place| %>
-                  <tr role="row" class="odd">
+                  <tr role="row" class="odd" id="place">
                     <td class="sorting_1"><%= place.name %></td>
                     <td>
                       <div class="p-2">
@@ -31,6 +37,9 @@
                     </td>
                     <td><%= place.detail %></td>
                     <td>
+                      <%= link_to edit_admin_place_path(place), remote: true do %>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.edit")%>!"><%= t("text.edit")%></i>
+                      <% end %>
                       <%= link_to admin_place_path(place), method: :delete, data: { confirm: t("text.confirm") } do %>
                         <i class="fa fa-trash" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="<%= t("text.delete")%>!"><%= t("text.delete")%></i>
                       <% end %>
@@ -58,4 +67,7 @@
       </div>
     </div>
   </div>
+</div>
+<%= render "new" %>
+<div class="modal" id="myModalEdit">
 </div>

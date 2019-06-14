@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by id: params[:id]
     @status = Status.new
-    @statuses = current_user.statuses.newest
+    @statuses = @user.statuses.newest
   end
 
   def edit; end

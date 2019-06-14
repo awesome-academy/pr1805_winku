@@ -1,7 +1,7 @@
 //= require jquery3
 //= require popper
-//= require bootstrap
 //= require rails-ujs
+//= require bootstrap
 //= require ./lib/perfect-scrollbar.jquery.min.js
 //= require ./lib/sparkline.js
 //= require ./lib/waves.js

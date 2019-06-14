@@ -9,6 +9,9 @@ vi:
     delete: Xóa
     create_tour: Tạo tua du lịch
     edit_tour: Cập nhật tour du lịch
+    create: Tạo mới
+    cancel: Hủy
+    update: Cập nhật
   text:
     tour: Tour du lịch
     published: Đã chia sẻ
@@ -22,6 +25,8 @@ vi:
     place_newest: Địa điểm nổi bật
     tour_newest: Bài viết mới nhất
     follow: Theo dõi trang
+    new_place: Tạo mới địa điểm
+    edit_place: Sửa địa điểm
   datetime:
     distance_in_words:
       about_x_hours:
