@@ -1,6 +1,5 @@
 class ToursController < ApplicationController
   before_action :load_tour, only: [:edit, :show, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :show
 
   def new
     @tour = Tour.new
@@ -13,10 +12,10 @@ class ToursController < ApplicationController
     @tour = current_user.tours.build tour_params
     if @tour.save
       flash[:success] = t("text.success")
-      redirect_to tours_path
+      redirect_to current_user
     else
       flash[:danger] = t("text.fails")
-      redirect_to tours_path
+      redirect_to current_user
     end
   end
 
@@ -26,17 +25,17 @@ class ToursController < ApplicationController
   def update
     if @tour.update tour_params
       flash[:success] = t("text.success")
-      redirect_to tours_path
+      redirect_to current_user
     else
       flash[:danger] = t("text.fails")
-      redirect_to tours_path
+      redirect_to current_user
     end
   end
 
   def destroy
     @tour.destroy
     flash[:success] = t("text.success")
-    redirect_to tours_path
+    redirect_to current_user
   end
 
   private

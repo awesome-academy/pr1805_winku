@@ -1,9 +1,17 @@
 <section>
   <div class="feature-photo">
-    <figure><%=image_tag "timeline-1.jpg", alt: "cover"%></figure>
+    <% if @user.business? %>
+      <figure><%=image_tag "cover_56266579-20181006203011.png", alt: "cover"%></figure>
+    <% else %>
+      <figure><%=image_tag "timeline-1.jpg", alt: "cover"%></figure>
+    <% end %>
     <div class="add-btn">
-      <span>1205 followers</span>
-      <a href="#" title="" data-ripple=""><%= I18n.t ".Add_Friend" %></a>
+      <span style="color: black;"><b>1205 followers</b></span>
+      <% if @user.business? && !current_user?(@user)%>
+        <a href="#" title="" data-ripple="">Follow</a>
+      <% elsif @user.user? && !current_user?(@user) %>
+        <a href="#" title="" data-ripple=""><%= I18n.t ".Add_Friend" %></a>
+      <% end %>
     </div>
     <form class="edit-phto">
       <i class="fa fa-camera-retro"></i>
@@ -32,78 +40,155 @@
           </div>
         </div>
         <div class="col-lg-10 col-sm-9">
-          <div class="timeline-info">
-            <ul>
+          <div class="timeline-info nav nav-tabs">
+            <ul class="nav nav-tabs">
               <li class="admin-name">
                 <h5><%= @user.name %></h5>
               </li>
-              <li>
-                <a class="active" href="time-line.html" title="" data-ripple="">
-                  <%= I18n.t ".Timeline" %></a>
-                <a class="" href="timeline-photos.html" title="" data-ripple="">
+              <li class="nav-item">
+                <a data-toggle="tab" href="#Timeline" class="nav-link active">
+                  <%= t("Timeline")%>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="timeline-photos.html" title="" data-ripple="">
                   <%= I18n.t ".Photos" %>
                 </a>
-                <a class="" href="timeline-friends.html" title="" data-ripple="">
-                  <%= I18n.t ".Friends" %>
-                </a>
-                <a class="" href="timeline-groups.html" title="" data-ripple="">
-                  <%=I18n.t ".Groups" %>
-                </a>
-                <a class="" href="about.html" title="" data-ripple="">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#About" title="" data-ripple="">
                   <%= I18n.t ".about" %>
                 </a>
-                <%= link_to t("button.create_tour"), new_tour_path if @user.business? %>
               </li>
+              <% if @user.user? || @user.admin? %>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#Friend" title="" data-ripple="">
+                    <%= I18n.t ".Friends" %>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#Group" title="" data-ripple="">
+                    <%=I18n.t ".Groups" %>
+                  </a>
+                </li>
+              <% elsif @user.business? && current_user?(@user) %>
+                <li class="nav-item">
+                  <a data-toggle="tab" href="#Statistical" class="nav-link">
+                    <%= t("Statistical")%>
+                  </a>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section><!-- top area -->
-  <section>
-    <div class="gap gray-bg">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="row" id="page-contents">
-              <div class="col-lg-3">
-                <aside class="sidebar static">
-                  <div class="widget">
-                      <h4 class="widget-title"><%= I18n.t ".SOCIALS" %></h4>
-                      <ul class="socials">
-                        <li class="facebook">
-                          <a title="" href="#"><i class="fa fa-facebook"></i> <span>facebook</span> <ins>45 likes</ins></a>
-                        </li>
-                        <li class="twitter">
-                          <a title="" href="#"><i class="fa fa-twitter"></i> <span>twitter</span><ins>25 likes</ins></a>
-                        </li>
-                        <li class="google">
-                          <a title="" href="#"><i class="fa fa-google"></i> <span>google</span><ins>35 likes</ins></a>
-                        </li>
-                      </ul>
-                    </div>
-                </aside>
-                <%= render "sidebars/sidebar-1" %>
-              </div>
-              <div class="col-lg-6">
-                <div class="loadMore">
-                  <div class="central-meta">
-                    <%= render "statuses/status_form", status: @status, user: @user if current_user == @user %>
-                  </div>
-                  <div id="post">
-                    <%= render "statuses/statuses", statuses: @statuses %>
-                  </div>
+</section>
+<div class="tab-content">
+  <div class="tab-pane active" id="Timeline">
+    <section>
+      <div class="gap gray-bg">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row" id="page-contents">
+                <div class="col-lg-3">
+                  <%= render "sidebars/sidebar-1" %>
                 </div>
-              </div>
-              <div class="col-lg-3">
-                <%= render "sidebars/sidebar-2" %>
+                <% if @user.user? || @user.admin? %>
+                  <div class="col-lg-6">
+                    <div class="loadMore">
+                      <div class="central-meta">
+                        <%= render "statuses/status_form", status: @status, user: @user%>
+                      </div>
+                      <div id="post">
+                        <%= render "statuses/statuses", statuses: @statuses %>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-3">
+                    <%= render "sidebars/sidebar-2" %>
+                  </div>
+                <% else %>
+                  <div class="col-lg-9">
+                    <% @tours.each do |tour| %>
+                      <div class="row col-lg-6" style="float: left;">
+                        <div class="col-lg-12">
+                          <%= render "tours/tour", tour: tour %>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-</section>
+    </section>
+  </div>
+  <div class="tab-pane fade" id="Statistical">
+    <section>
+      <div class="gap gray-bg">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-3 forum-warper post-filter-sec">
+              <aside class="sidebar full-style">
+                <%= render "sidebars/sidebar-4" %>
+              </aside>
+            </div>
+            <div class="col-lg-9">
+              <div class="forum-warper">
+                <div class="post-filter-sec">
+                  <form method="post" class="filter-form">
+                    <input type="post" placeholder="Search post">
+                    <button><i class="ti-search"></i></button>
+                  </form>
+                  <div class="purify">
+                    <span>filter by</span>
+                    <select style="display: none;">
+                      <option>Assending A-Z</option>
+                      <option>Desending Z-A</option>
+                      <option>Desending (date)</option>
+                      <option>Asending (date)</option>
+                    </select>
+                    <a href="#" title="">purify</a>
+                  </div>
+                </div>
+              </div>
+              <div class="forum-list post-filter-sec">
+                <table class="table table-responsive">
+                  <thead>
+                    <tr>
+                      <th scope="col"><%= t("text.tour") %></th>
+                      <th scope="col"><%= t("text.views") %></th>
+                      <th scope="col"><%= t("text.likes") %></th>
+                      <th scope="col"><%= t("text.comments") %></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @tours.each do |tour| %>
+                      <tr>
+                        <td>
+                          <i class="fa fa-comments"></i>
+                          <%= link_to tour.title, tour_path(tour) %>
+                          <h6>Started by: <%= tour.created_at %></h6>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td><%= tour.comments.size %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
 <div class="modal" id="myModaledit">
 </div>

@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     @status = Status.new
     @statuses = @user.statuses.newest
+    @tours = @user.tours.newest
+
   end
 
   def edit; end
