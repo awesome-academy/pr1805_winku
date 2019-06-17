@@ -14,6 +14,9 @@ en:
     update: Update
   text:
     tour: Tours
+    views: Views
+    likes: Likes
+    comments: Comments
     published: Published
     write_something: Write Something
     success: Success
@@ -148,3 +151,4 @@ en:
   they_will_miss_you: They will miss you!
   slogan: YOURS TO EXPLORE
   slogan_small: Our destination is not a land, but a new way!
+  Statistical: Statistical

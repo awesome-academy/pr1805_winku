@@ -14,6 +14,9 @@ vi:
     update: Cập nhật
   text:
     tour: Tour du lịch
+    views: Lượt xem
+    likes: Lượt thích
+    comments: Bình luận
     published: Đã chia sẻ
     write_something: Bạn cảm thấy thế nào?
     success: Thành công
@@ -92,7 +95,7 @@ vi:
   Home: Trang Chủ
   Timeline: Dòng Thời Gian
   Account_Settings: Chỉnh Sửa Tài Khoản
-  More_Pages: Trang
+  More_Pages: Khác
   Resend_confirmation_instructions: Gửi lại hướng dẫn xác nhận
   Sign_up: Đăng Kí
   Login: Đăng Nhập
@@ -134,3 +137,4 @@ vi:
   they_will_miss_you: Họ Sẽ Nhớ Bạn Rất Nhiều...
   slogan: TỰ DO KHÁM PHÁ
   slogan_small: Đích đến của chúng ta không phải  là một vùng đất, mà là một cách mình mới!
+  Statistical: Thống kê
