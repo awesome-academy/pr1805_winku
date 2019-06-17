@@ -11,6 +11,8 @@ class ToursController < ApplicationController
   end
 
   def show
+    @notification = Notification.find_by id: params[:notification_id]
+    @notification.update opened_at: Time.current if params[:notification_id]
   end
 
   def create
@@ -46,8 +48,7 @@ class ToursController < ApplicationController
   private
 
   def tour_params
-    params.require(:tour).permit :title, :content, :place_id, :time, :vehicle, :cost, image_attributes: [:id,
-      :image_link, :imageable_id, :imageable_type, :_destroy]
+    params.require(:tour).permit :title, :content, :place_id, :time, :vehicle, :cost, image_attributes: [:id, :image_link, :imageable_id, :imageable_type, :_destroy]
   end
 
   def load_tour

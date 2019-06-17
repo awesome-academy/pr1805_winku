@@ -1,0 +1,15 @@
+<li>
+  <% if notification.send_from_type == "Commented" and notification.event == "Tour" %>
+    <%= link_to "#{notification.send_from.name}", user_path(notification.send_from.id)  %> was
+    <%= link_to "#{notification.send_from_type}", tour_path(notification.post_id) %> on your <%= notification.event %>
+    <br>
+    <strong><p>At: <%= notification.created_at.strftime("%T-%d/%m/%Y") %></p></strong>
+  <% elsif notification.send_from_type == "Commented" and notification.event == "Status" %>
+   <%= link_to "#{notification.send_from.name}" %> was
+    <%= link_to "#{notification.send_from_type}", status_path(notification.post_id) %> on your <%= notification.event %>
+    <br>
+    <span><strong>At: <%= notification.created_at.strftime("%T-%d/%m/%Y")  %></strong></span>
+  <% end %>
+</li>
+  <%# elsif (notification.send_from_type == "Reported")
+    return (link_to notification.event, user_path(notification.event, notification_id: notification.id)) %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_112405) do
+ActiveRecord::Schema.define(version: 2019_06_18_092911) do
 
   create_table "businesses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address"
@@ -109,6 +109,9 @@ ActiveRecord::Schema.define(version: 2019_06_10_112405) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "event"
+    t.datetime "open_at"
+    t.datetime "opened_at"
     t.index ["comment_id"], name: "index_notifications_on_comment_id"
     t.index ["post_id"], name: "index_notifications_on_post_id"
     t.index ["report_id"], name: "index_notifications_on_report_id"

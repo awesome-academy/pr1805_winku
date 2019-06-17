@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => '/cable'
+  get 'notifications/index'
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
 
   scope "(:locale)", locale: /en|vi/ do
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
       resources :messages
     end
     resources :friendships, only: [:create, :destroy]
+    resources :notifications
   end
 
   scope "(:locale)", locale: /en|vi/ do

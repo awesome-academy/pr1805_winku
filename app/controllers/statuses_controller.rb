@@ -15,6 +15,11 @@ class StatusesController < ApplicationController
     end
   end
 
+  def show
+    @notification = Notification.find_by id: params[:notification_id]
+    @notification.update opened_at: Time.current if params[:notification_id]
+  end
+
   def edit
     respond_to do |format|
       format.html { render :edit}

@@ -18,6 +18,8 @@ class ConversationsController < ApplicationController
     @reciever = interlocutor(@conversation)
     @messages = @conversation.messages
     @message = Message.new
+    @notification = Notification.find_by id: params[:notification_id]
+    @notification.update opened_at: Time.current if params[:notification_id]
   end
 
   private

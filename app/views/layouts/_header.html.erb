@@ -31,9 +31,10 @@
         </ul>
       </li>
       <% if user_signed_in? %>
+        <%= render "notifications/notification_center", notifications: notifications %>
         <li style="float: right;">
           <div class="user-img">
-            <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>
+            <%= image_tag (current_user.image.image_link.to_s if current_user.image.present?) || "friend-avatar2.jpg"  %>
           </div>
           <ul>
             <li><%=link_to user_path(current_user) do %>

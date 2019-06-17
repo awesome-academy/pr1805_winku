@@ -3,7 +3,7 @@
   <ul class="we-comet">
     <li>
       <div class="comet-avatar">
-        <%= image_tag comment.user.image.image_link.to_s if comment.user.image.present? %>
+        <%= image_tag (comment.user.image.image_link.to_s if comment.user.image.present?) || "friend-avatar2.jpg" %>
       </div>
       <div class="we-comment">
         <div class="coment-head">

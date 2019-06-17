@@ -7,17 +7,17 @@
     </div>
     <form class="edit-phto">
       <i class="fa fa-camera-retro"></i>
-      <label class="fileContainer">
+      <!-- <label class="fileContainer">
         Edit Cover Photo
       <input type="file"/>
-      </label>
+      </label> -->
     </form>
     <div class="container-fluid">
       <div class="row merged">
         <div class="col-lg-2 col-sm-3">
           <div class="user-avatar">
             <figure>
-              <%= image_tag @user.image.image_link.to_s if @user.image.present? %>
+              <%= image_tag (current_user.image.image_link.to_s if current_user.image.present?) || "friend-avatar2.jpg"  %>
               <%= form_for @user, :html => {class: "edit-phto" } do |f| %>
                 <i class="fa fa-camera-retro"></i>
                   <%= f.fields_for :image_attributes do |image_f| %>

@@ -12,14 +12,15 @@
 //
 //= require jquery3
 //= require popper
-//= require jquery
 //= require rails-ujs
 //= require bootstrap
 //= require tinymce
 //= require cloudinary
+//= require cable
 //= require private_pub
 //= require chat
 //= require activestorage
+//= require toastr
 //= require turbolinks
 //= require_tree .
 $(document).on('turbolinks:load', function(){
@@ -30,3 +31,18 @@ $(document).on('turbolinks:load', function(){
     }
   });
 })
+$(document).ready(function()
+{
+  $("#open_notification").click(function(event)
+  {
+    event.stopPropagation();
+    $("#notificationContainer").fadeToggle(300);
+    $("#notification_count").fadeOut("fast");
+  });
+
+  $(document).on("click", function()
+  {
+    $("#notificationContainer").hide();
+  });
+
+});
