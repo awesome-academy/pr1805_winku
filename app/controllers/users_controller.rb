@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @status = Status.new
     @statuses = @user.statuses.newest
     @tours = @user.tours.newest
-
   end
 
   def edit; end

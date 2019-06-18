@@ -30,6 +30,7 @@ en:
     follow: Follow Page
     new_place: New place
     edit_place: Edit place
+    not_business: You need to register your business right to use this function!
   datetime:
     distance_in_words:
       about_x_hours:
@@ -152,3 +153,6 @@ en:
   slogan: YOURS TO EXPLORE
   slogan_small: Our destination is not a land, but a new way!
   Statistical: Statistical
+  Total_Tours: Total Tours
+  Total_Status: Total Statuses
+  Total_follow: Total follows
