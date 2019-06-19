@@ -8,7 +8,7 @@
     <div class="add-btn">
       <span style="color: black;"><b>1205 followers</b></span>
       <% if @user.business? && !current_user?(@user)%>
-        <a href="#" title="" data-ripple="">Follow</a>
+        <a href="#" title="" data-ripple=""><%= t("Follow") %></a>
       <% elsif @user.user? && !current_user?(@user) %>
         <a href="#" title="" data-ripple=""><%= I18n.t ".Add_Friend" %></a>
       <% end %>
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="col-lg-10 col-sm-9">
-          <div class="timeline-info nav nav-tabs">
+          <div class="timeline-info">
             <ul class="nav nav-tabs">
               <li class="admin-name">
                 <h5><%= @user.name %></h5>
@@ -50,24 +50,31 @@
                   <%= t("Timeline")%>
                 </a>
               </li>
+              <% if @user.business? %>
+                <li class="nav-item">
+                  <a data-toggle="tab" href="#Statuses" class="nav-link">
+                    <%= t("Statuses")%>
+                  </a>
+                </li>
+              <% end %>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="timeline-photos.html" title="" data-ripple="">
-                  <%= I18n.t ".Photos" %>
+                <a data-toggle="tab" href="#Photos" class="nav-link" >
+                  <%= t("Photos") %>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#About" title="" data-ripple="">
+                <a data-toggle="tab" href="#About" class="nav-link" >
                   <%= I18n.t ".about" %>
                 </a>
               </li>
               <% if @user.user? || @user.admin? %>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#Friend" title="" data-ripple="">
+                  <a data-toggle="tab" href="#Friend" class="nav-link" >
                     <%= I18n.t ".Friends" %>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#Group" title="" data-ripple="">
+                  <a data-toggle="tab" class="nav-link" href="#Group">
                     <%=I18n.t ".Groups" %>
                   </a>
                 </li>
@@ -182,6 +189,36 @@
                     <% end %>
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="tab-pane fade" id="Statuses">
+    <section>
+      <div class="gap gray-bg">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row" id="page-contents">
+                <div class="col-lg-3">
+                  <%= render "sidebars/sidebar-1" %>
+                </div>
+                <div class="col-lg-6">
+                  <div class="loadMore">
+                    <div class="central-meta">
+                      <%= render "statuses/status_form", status: @status, user: @user%>
+                    </div>
+                    <div id="post">
+                      <%= render "statuses/statuses", statuses: @statuses %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <%= render "sidebars/sidebar-2" %>
+                </div>
               </div>
             </div>
           </div>

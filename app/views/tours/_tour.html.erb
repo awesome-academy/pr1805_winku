@@ -18,7 +18,7 @@
       <div class="col-lg-7">
         <h6>:<%= tour.cost %></h6>
         <h6>:<%= tour.time %></h6>
-        <h6>:<%= tour.place.name if tour.place %></h6>
+        <h6>:<%= link_to tour.place.name, place_path(tour.place) if tour.place %></h6>
         <h6>:<%= tour.vehicle %></h6>
       </div>
     </div>
