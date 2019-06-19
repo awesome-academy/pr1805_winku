@@ -23,8 +23,15 @@
       </div>
     </div>
     <div class="g-post-ranking">
-      <a title="" href="#" class="likes"><i class="fa fa-heart-o"></i>10 likes</a>
-      <a class="coments"><i class="fa fa-comment-o"></i><%= tour.comments.size %> comments</a>
+      <a class="views"><i class="fa fa-eye"></i>
+        <%= tour.interactives.view.size %> <%= t("text.views") %>
+      </a>
+      <a class="likes"><i class="fa fa-heart-o"></i>
+        <%= tour.interactives.like.size %> <%= t("text.likes") %>
+      </a>
+      <a class="coments"><i class="fa fa-comment-o"></i>
+        <%= tour.comments.size %> <%= t("text.comments") %>
+      </a>
     </div>
   </div>
 </div>

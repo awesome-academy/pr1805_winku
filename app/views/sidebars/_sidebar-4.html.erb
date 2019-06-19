@@ -1,26 +1,18 @@
 <aside class="sidebar full-style">
   <div class="widget">
-    <h4 class="widget-title">Forum Statistics</h4>
+    <h4 class="widget-title"><%= t("Statistical") %></h4>
     <ul class="forum-static">
       <li>
-        <a href="" title="">Tours</a>
-        <span>13</span>
+        <a href="" title=""><%= t("Total_Tours") %></a>
+        <span><%= @tours.size %></span>
       </li>
       <li>
-        <a href="" title="">Statuses</a>
+        <a href="" title=""><%= t("Total_Status") %></a>
         <span>50</span>
       </li>
       <li>
-        <a href="" title="">User follow page</a>
+        <a href="" title=""><%= t("Total_follow") %></a>
         <span>14</span>
-      </li>
-      <li>
-        <a href="" title="">Replies</a>
-        <span>32</span>
-      </li>
-      <li>
-        <a href="" title="">Topic Tags</a>
-        <span>50</span>
       </li>
     </ul>
   </div>

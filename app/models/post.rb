@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   belongs_to :place, optional: true
   has_one :image, as: :imageable, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :interactives, class_name: Interactive.name, foreign_key: :passive_id
 
   accepts_nested_attributes_for :image, reject_if: proc {|attributes|
     attributes['image_link'].blank?}

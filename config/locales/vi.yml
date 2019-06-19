@@ -30,6 +30,7 @@ vi:
     follow: Theo dõi trang
     new_place: Tạo mới địa điểm
     edit_place: Sửa địa điểm
+    not_business: Bạn cần đăng kí quyền doanh nghiệp để sử dụng chức năng này!
   datetime:
     distance_in_words:
       about_x_hours:
@@ -138,3 +139,6 @@ vi:
   slogan: TỰ DO KHÁM PHÁ
   slogan_small: Đích đến của chúng ta không phải  là một vùng đất, mà là một cách mình mới!
   Statistical: Thống kê
+  Total_Tours: Tổng số tour du lịch
+  Total_Status: Tổng số bài trạng thái
+  Total_follow: Tổng số lượt theo dõi

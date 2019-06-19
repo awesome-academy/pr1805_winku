@@ -1,11 +1,14 @@
 class ToursController < ApplicationController
   before_action :load_tour, only: [:edit, :show, :update, :destroy]
+  before_action :check_business!, except: [:show]
 
   def new
     @tour = Tour.new
   end
 
   def show
+    interactive = Interactive.interactive_view(current_user.id, params[:id])
+    Interactive.create active_id: current_user.id, passive_id: params[:id], action: :view if interactive.blank?
   end
 
   def create

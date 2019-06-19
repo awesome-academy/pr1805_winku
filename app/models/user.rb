@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :conversations, :foreign_key => :sender_id
   has_many :friendships
   has_many :friends, :through => :friendships
+  has_many :interactives
 
   accepts_nested_attributes_for :image, reject_if: proc {|attributes|
     attributes['image_link'].blank?}

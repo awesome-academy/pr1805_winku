@@ -16,4 +16,10 @@ module ApplicationHelper
   def bussinesses
     @users = User.newest.business
   end
+
+  def check_business!
+    return true if current_user.business?
+      flash[:alert] = t("text.not_business")
+      redirect_to root_path
+  end
 end
