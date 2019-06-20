@@ -24,10 +24,10 @@
           <div class="col-lg-9">
             <div class="blog-sec right-pading">
               <div class="post-filter-sec">
-                <form method="post" class="filter-form">
-                  <input type="post" placeholder="Search post">
+                <%= search_form_for @q, url: root_path, class: "filter-form" do |f| %>
+                  <%= f.search_field :title_or_time_or_vehicle_or_cost_cont, placeholder: t("Search_post"), type: "post" %>
                   <button><i class="ti-search"></i></button>
-                </form>
+                <% end %>
                 <div class="purify">
                   <span>filter by</span>
                   <select style="display: none;">
@@ -48,10 +48,22 @@
                 <div class="section-heading">
                   <h2><%= t("text.tour_newest") %></h2>
                 </div>
-                <% @tours.each do |tour| %>
-                  <div class="col-lg-6 col-sm-8">
-                    <%= render "tours/tour", tour: tour %>
-                  </div>
+                <% if params[:q] %>
+                  <% if @tours_search.blank? %>
+                    <div class="col-lg-12" style="text-align: center;"><h5><%= t("Not_found")%></h5></div>
+                  <% else %>
+                    <% @tours_search.each do |tour| %>
+                      <div class="col-lg-6 col-sm-8">
+                        <%= render "tours/tour", tour: tour %>
+                      </div>
+                    <% end %>
+                  <% end %>
+                <% else %>
+                  <% @tours.each do |tour| %>
+                    <div class="col-lg-6 col-sm-8">
+                      <%= render "tours/tour", tour: tour %>
+                    </div>
+                  <% end %>
                 <% end %>
               </div>
             </div>

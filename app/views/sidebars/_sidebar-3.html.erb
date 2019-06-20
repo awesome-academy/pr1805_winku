@@ -4,8 +4,12 @@
     <ul class="naves">
       <% places_newest.each do |place|%>
         <li>
-          <i class="ti-clipboard"></i>
-          <%= link_to place.name, place_path(place) %>
+          <div class="friend-info">
+            <figure style="width: 25%">
+              <%= image_tag place.image.image_link.to_s if place.image.present? %>
+            </figure>
+            <%= link_to place.name, place_path(place) %>
+          </div>
         </li>
       <% end %>
     </ul>
