@@ -31,6 +31,8 @@ en:
     new_place: New place
     edit_place: Edit place
     not_business: You need to register your business right to use this function!
+    acount_block: Sorry! Account is locked!
+    tour_block: Sorry! Tour is locked!
   datetime:
     distance_in_words:
       about_x_hours:

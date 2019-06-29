@@ -1,0 +1,62 @@
+<div class="container col-lg-12">
+  <div class="central-meta">
+    <div class="editing-info">
+      <h5 class="f-title"><i class="ti-info-alt"></i> Create favourite Page</h5>
+      <%= form_for @business do |f| %>
+        <div class="form-group half">
+          <%= f.text_field :page_name, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input">Page Name</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group half">
+          <%= f.text_field :title, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input">Sub Title</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :email, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input">Email@</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :phone_number, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input">Phone No.</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :website, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input">www.yourdomain.com</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :address, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input">Address</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :details, rows: "4", id: "textarea", required: "required" %>
+          <label class="control-label" for="textarea">Additional Info</label><i class="mtrl-select"></i>
+        </div>
+
+        <h5 class="f-title ext-margin"><i class="ti-share"></i> Your Social Accounts</h5>
+        <div class="form-group">
+          <%= f.text_field :social_acount1, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input"><i class="fa fa-facebook-square"></i> Facebook</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :social_acount2, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input"><i class="fa fa-twitter-square"></i> Twitter</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :social_acount3, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input"><i class="fa fa-rss-square"></i> RSS</label><i class="mtrl-select"></i>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :social_acount4, type: "text", id: "input", required: "required" %>
+          <label class="control-label" for="input"><i class="fa fa-instagram"></i> Instagram</label><i class="mtrl-select"></i>
+        </div>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.submit t("button.save"), class: "mtr-btn" %>
+      <% end %>
+      <div class="submit-btns">
+        <%= link_to root_path, type: "button", class: "mtr-btn" do %>
+          <span><%= t("button.cancel") %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

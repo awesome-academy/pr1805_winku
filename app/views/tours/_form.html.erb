@@ -1,5 +1,6 @@
 <%= form_for tour do |f| %>
   <div class="central-meta">
+    <%= render "shared/error_message", error: tour %>
     <div class="new-postbox">
       <figure>
         <%= image_tag current_user.image.image_link.to_s if current_user.image.present? %>

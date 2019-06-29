@@ -1,8 +1,13 @@
 class Admin::UsersController < Admin::AdminController
-  before_action :load_user, only: [:update, :destroy]
+  before_action :load_user, only: [:show, :update, :destroy]
+  before_action :check_user, only: :show
 
   def index
     @users = User.all
+  end
+
+  def show
+    @user.business.update opened_at: Time.now
   end
 
   def update
@@ -35,5 +40,11 @@ class Admin::UsersController < Admin::AdminController
 
   def load_user
     @user = User.find_by id: params[:id]
+  end
+
+  def check_user
+    return true if @user.business.present?
+      flash[:alert] = t("text.not_business")
+      redirect_back(fallback_location: root_path)
   end
 end

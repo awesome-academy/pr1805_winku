@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
     resources :friendships, only: [:create, :destroy]
     resources :places, only: :show
+    resources :businesses, only: [:show, :new, :create]
     namespace :admin do
       root "homes#index"
       resources :statuses, except: [:new, :create, :edit]

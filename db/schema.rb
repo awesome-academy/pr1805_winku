@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_123212) do
+ActiveRecord::Schema.define(version: 2019_06_28_055638) do
 
   create_table "businesses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 2019_06_18_123212) do
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone_number"
+    t.string "page_name"
+    t.string "title"
+    t.string "email"
+    t.string "social_acount1"
+    t.string "social_acount2"
+    t.string "social_acount3"
+    t.string "social_acount4"
+    t.string "social_acount5"
+    t.integer "user_id"
+    t.datetime "opened_at"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -171,7 +182,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_123212) do
     t.string "avatar"
     t.integer "role"
     t.string "integer"
-    t.bigint "business_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -190,7 +200,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_123212) do
     t.boolean "expires"
     t.string "refresh_token"
     t.integer "status"
-    t.index ["business_id"], name: "index_users_on_business_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -199,5 +208,4 @@ ActiveRecord::Schema.define(version: 2019_06_18_123212) do
   add_foreign_key "friendships", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
-  add_foreign_key "users", "businesses"
 end

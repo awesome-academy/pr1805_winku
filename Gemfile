@@ -35,6 +35,8 @@ gem "material_design_icons"
 gem "private_pub"
 gem "thin"
 gem "ransack"
+gem "chartkick"
+gem "groupdate"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

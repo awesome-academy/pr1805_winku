@@ -53,9 +53,7 @@
           </div>
           <div class="row">
             <div class="col-lg-9">
-              <div class="flot-chart">
-                <div class="flot-chart-content" id="flot-line-chart"></div>
-              </div>
+             <%= line_chart @users.group(:created_at).count %>
             </div>
             <div class="col-lg-3">
               <div class="row">
@@ -103,6 +101,23 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-md-flex align-items-center">
+            <div>
+              <h4 class="card-title">Site Analysis</h4>
+              <h5 class="card-subtitle">Overview of Latest Month</h5>
+            </div>
+          </div>
+          <div>
+            <%= column_chart @statuses.group("Day(created_at)").count %>
           </div>
         </div>
       </div>

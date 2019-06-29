@@ -30,7 +30,9 @@ vi:
     follow: Theo dõi trang
     new_place: Tạo mới địa điểm
     edit_place: Sửa địa điểm
+    acount_block: Xin lỗi! Tài khoản này đã bị khóa!
     not_business: Bạn cần đăng kí quyền doanh nghiệp để sử dụng chức năng này!
+    tour_block: Xin lỗi! Chuyến du lịch này đã bị khóa!
   datetime:
     distance_in_words:
       about_x_hours:

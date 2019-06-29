@@ -1,5 +1,6 @@
 class ToursController < ApplicationController
   before_action :load_tour, only: [:edit, :show, :update, :destroy]
+  before_action :check_tour_block, except: [:new, :index, :create]
   before_action :check_business!, except: [:show]
 
   def new
@@ -14,11 +15,10 @@ class ToursController < ApplicationController
   def create
     @tour = current_user.tours.build tour_params
     if @tour.save
-      flash[:success] = t("text.success")
+      flash[:notice] = t("text.success")
       redirect_to current_user
     else
-      flash[:danger] = t("text.fails")
-      redirect_to current_user
+      render :new
     end
   end
 
@@ -27,17 +27,17 @@ class ToursController < ApplicationController
 
   def update
     if @tour.update tour_params
-      flash[:success] = t("text.success")
+      flash[:notice] = t("text.success")
       redirect_to current_user
     else
-      flash[:danger] = t("text.fails")
-      redirect_to current_user
+      flash[:alert] = t("text.fails")
+      render :edit
     end
   end
 
   def destroy
     @tour.destroy
-    flash[:success] = t("text.success")
+    flash[:notice] = t("text.success")
     redirect_to current_user
   end
 
@@ -50,5 +50,11 @@ class ToursController < ApplicationController
 
   def load_tour
     @tour = Tour.find_by id: params[:id]
+  end
+
+  def check_tour_block
+    return true if @tour.unblock?
+      flash[:alert] = t("text.tour_block")
+      redirect_to root_path
   end
 end
