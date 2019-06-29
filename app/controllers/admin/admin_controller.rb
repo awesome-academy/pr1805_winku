@@ -1,5 +1,6 @@
 class Admin::AdminController < ApplicationController
   layout "admin/application"
+  include Admin::BusinessesHelper
   before_action :set_locale, :ensure_admin!
 
   def set_locale
@@ -13,7 +14,7 @@ class Admin::AdminController < ApplicationController
       return true
     else
       flash[:alert] = t("text.not_admin")
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     end
   end
 

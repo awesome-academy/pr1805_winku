@@ -1,0 +1,11 @@
+<li>
+  <%= link_to admin_user_path(noti.user.id), class: "link border-top" do %>
+    <div class="d-flex no-block align-items-center p-10">
+      <span class="btn btn-primary rounded-circle"><i class="ti-user"></i></span>
+      <div class="m-l-10">
+        <h5 class="m-b-0"><%= noti.user.name %></h5>
+        <span class="mail-desc">I want to become a business!</span>
+      </div>
+    </div>
+  <% end %>
+</li>

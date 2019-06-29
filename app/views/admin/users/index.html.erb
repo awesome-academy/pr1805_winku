@@ -26,7 +26,7 @@
               <tbody>
                 <% @users.each do |user| %>
                   <tr role="row" class="odd">
-                    <td class="sorting_1"><%= user.name %></td>
+                    <td class="sorting_1"><%= link_to user.name, admin_user_path(user) %></td>
                     <td>
                       <div class="p-2">
                         <%= image_tag user.image.image_link.to_s, alt: "user", width: "80", class: "rounded-circle" if user.image %>

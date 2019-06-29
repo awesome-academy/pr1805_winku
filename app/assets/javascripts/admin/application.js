@@ -18,6 +18,9 @@
 //= require ./lib/chart-page-init.js
 //= require ./lib/datatable-checkbox-init.js
 //= require ./lib/datatables.min.js
+//= require ./lib/highcharts.js
+//= require Chart.bundle
+//= require chartkick
 $(document).on("change", "select#sel1", function(){
   var role = $(this).val();
   $.ajax({

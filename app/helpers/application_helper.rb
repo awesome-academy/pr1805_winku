@@ -20,6 +20,12 @@ module ApplicationHelper
   def check_business!
     return true if current_user.business?
       flash[:alert] = t("text.not_business")
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
+  end
+
+  def check_user!
+    return true if current_user.user?
+      flash[:alert] = t("text.not_user")
+      redirect_back(fallback_location: root_path)
   end
 end

@@ -10,7 +10,11 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :image, reject_if: proc {|attributes|
     attributes['image_link'].blank?}
 
+  validates :title, length: {minimum: 10 , maximum: 200}
+  validates :content, length: {minimum: 1}
+
   enum status: { block: 1, unblock: 2 }
+
   scope :newest, -> { order created_at: :desc }
 
   def set_default_status

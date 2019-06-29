@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="">
+          <%= image_tag @user.image.image_link.to_s, width: "150", class: "rounded-circle" if @user.image %>
+        </div>
+        <hr>
+        <h6 class="font-medium"><%= @user.name %></h6>
+        <span class="m-b-15 d-block">
+          <%= form_for [:admin, @user], method: :patch, value: @user.id do |f| %>
+            <div class="form-group">
+              <%= f.select :role, options_for_select([["admin", :admin],["user", :user],["business", :business]], selected: @user.role), {}, class: "form-control", id: "sel1" %>
+            </div>
+          <% end %>
+        </span>
+      </div>
+      <div class="col-lg-9">
+        <h4 class="card-title m-b-0"><i class="ti-info-alt"></i>Page Info</h4>
+        <p>
+          <%= @user.business.details %>
+        </p>
+        <ul class="list-style-none">
+          <li class="d-flex no-block card-body"><i class="ti-user w-30px m-t-5"></i><div><%= @user.business.page_name %></div></li>
+          <li class="d-flex no-block card-body"><i class="ti-map-alt w-30px m-t-5"></i><div><%= @user.business.address %></div></li>
+          <li class="d-flex no-block card-body"><i class="ti-mobile w-30px m-t-5"></i><div><%= @user.business.phone_number %></div></li>
+          <li class="d-flex no-block card-body"><i class="ti-email w-30px m-t-5"></i><div><%= @user.business.email %></div></li>
+          <li class="d-flex no-block card-body"><i class="ti-world w-30px m-t-5"></i><div><%= @user.business.website %></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
