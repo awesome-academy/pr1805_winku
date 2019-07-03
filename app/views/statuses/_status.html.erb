@@ -27,35 +27,40 @@
           </p>
         </div>
         <%= image_tag status.image.image_link.to_s if status.image.present? %>
+        <div class="we-video-info">
+          <ul>
+            <li id="like-<%= status.id %>">
+              <% if status.interactives.blank? %>
+                <%= render "likes/like", status: status %>
+              <% else %>
+                <% status.interactives.each do |interactive| %>
+                  <%= render "likes/dislike", status: status, interactive: interactive if interactive.user == current_user%>
+                <% end %>
+              <% end %>
+            </li>
+            </li>
+            <li style="float: right;">
+              <span data-toggle="tooltip" title="" data-original-title="share">
+                <i class="fa fa-share-square"> 10 shares </i>
+                <ins></ins>
+              </span>
+            </li>
+            <li style="float: right;">
+              <span data-toggle="tooltip" title="" data-original-title="comment">
+                <%= link_to new_comment_path(commentable_id:
+                  status.id, commentable_type: "status"), data:{ toggle: "collapse" }, remote: true do %>
+                  <i class="fa fa-comments-o"> <%= status.comments.size %> comments</i>
+                <% end %>
+              </span>
+          </ul>
+        </div>
+        <div id="<%= status.id %>" class="status">
+          <%= render "comments/comment_form", commentable: status %>
+        </div>
         <div id="comments-<%= status.id %>">
           <%= render "comments/comment_list", commentable: status %>
         </div>
-        <div class="we-video-info">
-          <ul>
-            <li>
-              <%= link_to new_comment_path(commentable_id:
-                status.id, commentable_type: "status"), class: "btn btn-basic btn-comment", data:{ toggle: "collapse" }, remote: true do %>
-                <i class="fa fa-comments-o"></i>
-              <% end %>
-            </li>
-            <li>
-              <span class="like" data-toggle="tooltip" title="" data-original-title="like">
-                <i class="ti-heart"></i>
-                <ins></ins>
-              </span>
-            </li>
-            <li>
-              <span class="dislike" data-toggle="tooltip" title="" data-original-title="dislike">
-                <i class="ti-heart-broken"></i>
-                <ins></ins>
-              </span>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
-  </div>
-  <div id="<%= status.id %>" class="status">
-    <%= render "comments/comment_form", commentable: status %>
   </div>
 </div>

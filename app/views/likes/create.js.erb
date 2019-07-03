@@ -1,0 +1,1 @@
+$("#like-<%= @interactive.post.id %>").html("<%= j(render('likes/dislike', status: @interactive.post, interactive: @interactive)) %>");

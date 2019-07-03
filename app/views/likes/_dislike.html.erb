@@ -1,0 +1,5 @@
+<span data-toggle="tooltip" title="" data-original-title="dislike">
+  <%= link_to like_path(interactive), method: :detete, remote: true do %>
+    <i class="fa fa-thumbs-up"> You and <%= status.interactives.size - 1 %> others</i>
+  <% end %>
+</span>
