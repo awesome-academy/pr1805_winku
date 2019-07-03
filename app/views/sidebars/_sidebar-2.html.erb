@@ -1,83 +1,85 @@
 <aside class="sidebar static">
-  <div class="widget">
-    <h4 class="widget-title"><%= I18n.t ".Your_Page" %></h4>
-    <div class="your-page">
-      <figure>
-        <a href="#" title=""><%= image_tag "friend-avatar9.jpg" %></a>
-      </figure>
-      <div class="page-meta">
-        <a href="#" title="" class="underline"><%= I18n.t ".My_Page" %></a>
-        <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
-        <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
-      </div>
-      <div class="page-likes">
-        <ul class="nav nav-tabs likes-btn">
-          <li class="nav-item"><a class="active" href="#link1" data-toggle="tab"><%= I18n.t ".Likes" %></a></li>
-           <li class="nav-item"><a class="" href="#link2" data-toggle="tab">
-            <%= I18n.t ".Views"  %></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <div class="tab-pane active fade show " id="link1" >
-          <span><i class="ti-heart"></i>884</span>
-            <a href="#" title="weekly-likes">35 new likes this week</a>
-            <div class="users-thumb-list">
-            <a href="#" title="Anderw" data-toggle="tooltip">
-              <%= image_tag "userlist-1.jpg" %>
-            </a>
-            <a href="#" title="frank" data-toggle="tooltip">
-              <%= image_tag "userlist-2.jpg" %>
-            </a>
-            <a href="#" title="Sara" data-toggle="tooltip">
-              <%= image_tag "userlist-3.jpg" %>
-            </a>
-            <a href="#" title="Amy" data-toggle="tooltip">
-              <%= image_tag "userlist-4.jpg" %>
-            </a>
-            <a href="#" title="Ema" data-toggle="tooltip">
-              <%= image_tag "userlist-5.jpg" %>
-            </a>
-            <a href="#" title="Sophie" data-toggle="tooltip">
-              <%= image_tag "userlist-6.jpg" %>
-            </a>
-            <a href="#" title="Maria" data-toggle="tooltip">
-              <%= image_tag "userlist-7.jpg" %>
-            </a>
+  <% if current_user.business? %>
+    <div class="widget stick-widget">
+      <h4 class="widget-title"><%= I18n.t ".Your_Page" %></h4>
+      <div class="your-page">
+        <figure>
+          <a href="#" title=""><%= image_tag "friend-avatar9.jpg" %></a>
+        </figure>
+        <div class="page-meta">
+          <a href="#" title="" class="underline"><%= I18n.t ".My_Page" %></a>
+          <span><i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a></span>
+          <span><i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a></span>
+        </div>
+        <div class="page-likes">
+          <ul class="nav nav-tabs likes-btn">
+            <li class="nav-item"><a class="active" href="#link1" data-toggle="tab"><%= I18n.t ".Likes" %></a></li>
+             <li class="nav-item"><a class="" href="#link2" data-toggle="tab">
+              <%= I18n.t ".Views"  %></a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active fade show " id="link1" >
+            <span><i class="ti-heart"></i>884</span>
+              <a href="#" title="weekly-likes">35 new likes this week</a>
+              <div class="users-thumb-list">
+                <a href="#" title="Anderw" data-toggle="tooltip">
+                  <%= image_tag "userlist-1.jpg" %>
+                </a>
+                <a href="#" title="frank" data-toggle="tooltip">
+                  <%= image_tag "userlist-2.jpg" %>
+                </a>
+                <a href="#" title="Sara" data-toggle="tooltip">
+                  <%= image_tag "userlist-3.jpg" %>
+                </a>
+                <a href="#" title="Amy" data-toggle="tooltip">
+                  <%= image_tag "userlist-4.jpg" %>
+                </a>
+                <a href="#" title="Ema" data-toggle="tooltip">
+                  <%= image_tag "userlist-5.jpg" %>
+                </a>
+                <a href="#" title="Sophie" data-toggle="tooltip">
+                  <%= image_tag "userlist-6.jpg" %>
+                </a>
+                <a href="#" title="Maria" data-toggle="tooltip">
+                  <%= image_tag "userlist-7.jpg" %>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="link2" >
-            <span><i class="ti-eye"></i>440</span>
-            <a href="#" title="weekly-likes">440 new views this week</a>
-            <div class="users-thumb-list">
-            <a href="#" title="Anderw" data-toggle="tooltip">
-              <%= image_tag "userlist-1.jpg" %>
-            </a>
-            <a href="#" title="frank" data-toggle="tooltip">
-              <%= image_tag "userlist-2.jpg" %>
-            </a>
-            <a href="#" title="Sara" data-toggle="tooltip">
-              <%= image_tag "userlist-3.jpg" %>
-            </a>
-            <a href="#" title="Amy" data-toggle="tooltip">
-              <%= image_tag "userlist-4.jpg" %>
-            </a>
-            <a href="#" title="Ema" data-toggle="tooltip">
-              <%= image_tag "userlist-5.jpg" %>
-            </a>
-            <a href="#" title="Sophie" data-toggle="tooltip">
-              <%= image_tag "userlist-6.jpg" %>
-            </a>
-            <a href="#" title="Maria" data-toggle="tooltip">
-              <%= image_tag "userlist-7.jpg" %>
-            </a>
+            <div class="tab-pane fade" id="link2" >
+              <span><i class="ti-eye"></i>440</span>
+              <a href="#" title="weekly-likes">440 new views this week</a>
+              <div class="users-thumb-list">
+                <a href="#" title="Anderw" data-toggle="tooltip">
+                  <%= image_tag "userlist-1.jpg" %>
+                </a>
+                <a href="#" title="frank" data-toggle="tooltip">
+                  <%= image_tag "userlist-2.jpg" %>
+                </a>
+                <a href="#" title="Sara" data-toggle="tooltip">
+                  <%= image_tag "userlist-3.jpg" %>
+                </a>
+                <a href="#" title="Amy" data-toggle="tooltip">
+                  <%= image_tag "userlist-4.jpg" %>
+                </a>
+                <a href="#" title="Ema" data-toggle="tooltip">
+                  <%= image_tag "userlist-5.jpg" %>
+                </a>
+                <a href="#" title="Sophie" data-toggle="tooltip">
+                  <%= image_tag "userlist-6.jpg" %>
+                </a>
+                <a href="#" title="Maria" data-toggle="tooltip">
+                  <%= image_tag "userlist-7.jpg" %>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div><!-- page like widget -->
+  <% else %>
     <div class="widget">
       <%= render "friendships/friend_list", user: current_user %>
     </div>
-  </div>
+  <% end %>
 </aside>

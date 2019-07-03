@@ -1,0 +1,5 @@
+<span data-toggle="tooltip" title="" data-original-title="like">
+  <%= link_to likes_path(like: :like, passive_id: status.id), method: :post, remote: true do %>
+    <i class="fa fa-thumbs-o-up"> <%= status.interactives.size %> others</i>
+  <% end %>
+</span>
